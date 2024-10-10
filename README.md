@@ -1,4 +1,4 @@
-# Applied computer science speaker series
+# Applied computer science invited speaker series
 
 Homepage to collect the speakers and artifacts.
 
