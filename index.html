@@ -54,6 +54,11 @@ Co-Host: Philipp Edelmann<br>
       <td>05/27/2025</td>
   </tr>
   <tr>
+      <td>Ryan Friese</td>
+      <td><a href="#fy259">Introducing the Lamellar Runtime: A Modern Approach to High-Performance Computing</a></td>
+      <td>04/03/2025</td>
+  </tr>
+  <tr>
       <td>Johannes Blaschke</td>
       <td><a href="#fy257">Deploying and Supporting Julia at NERSC</a></td>
       <td>03/12/2025</td>
@@ -107,6 +112,9 @@ Co-Host: Philipp Edelmann<br>
 
 <h2>Talks</h2>
 
+
+
+
 <div id="fy258"></div>
 <h3>LCI: a Lightweight Communication Interface for Asynchronous Multithreaded Communication</h3>
 Speaker: Jiakun Yan<br>
@@ -120,6 +128,32 @@ The Lightweight Communication Interface (LCI) is an experimental communication l
 Bio:
 <p>
 Jiakun Yan is a fifth-year Ph.D. student at UIUC, advised by Prof. Marc Snir. His research involves exploring better communication library designs for highly dynamic/irregular programming systems and applications. He is the main contributor to the Lightweight Communication Interface (LCI) Project and the HPX LCI parcelport.
+</p>
+
+<div id="fy259"></div>
+<h3>Introducing the Lamellar Runtime: A Modern Approach to High-Performance Computing</h3>
+Speaker: Ryan Friese<br>
+Pacific Northwest National Laboratory<br>
+Senior computer scientist<br><br>
+
+Abstract:
+<p>
+In the realm of High-Performance Computing (HPC), achieving peak system performance while maintaining code safety and concurrency has always been a challenging endeavor. Traditional HPC frameworks often struggle with memory safety issues, race conditions, and the complexities of parallel programming. In this talk, I introduce Lamellar, a new HPC runtime that leverages the modern programming language Rust to address these enduring challenges.
+Rust, known for its powerful type system and memory safety guarantees without a garbage collector, is rapidly gaining traction within the systems programming community. However, its potential in the HPC domain is yet to be fully explored. The Lamellar runtime harnesses Rust's strengths, providing a robust, scalable, and safe environment for developing and executing high-performance applications.
+This talk is designed for computational domain and computer scientists who are well-acquainted with HPC concepts but may be new to Rust. The talk will cover the following key topics:
+<ol>
+    <li>Introduction to Rust: An overview of Rust’s features and why it's suitable for HPC applications.</li>
+    <li>Understanding the Lamellar Runtime: A deep dive into the architecture and core components of the Lamellar runtime and stack.</li>
+    <li>Concurrency and Parallelism: How Rust’s concurrency model and Lamellar API’s ensure safe parallel execution, eliminating common pitfalls like data races.</li>
+    <li>Performance Benchmarks: Comparative analysis showcasing the performance benefits of using Rust Lamellar Runtime in selected benchmarks.
+    </li>
+    <li>Getting Started: Resources, tools, and best practices for adopting Rust and Lamellar in your HPC projects.</li>
+</ol>
+Join me as we look into the future of HPC with Rust and the Lamellar Runtime.
+<p>
+Bio:
+<p>
+Dr. Ryan Friese is a senior computer scientist at Pacific Northwest National Laboratory in the Future Computing Technologies group. His research interests span hardware/software co-design of runtime and system software for novel architectures, HPC (high performance computing) network simulation and modeling, the analysis and optimization of data movement in large scale distributed workflows, and performance modeling of irregular applications. His recent work has focused on enabling memory safe programming on HPC systems by leading the development of the Lamellar Runtime, an asynchronous distributed runtime written in the Rust Programming Language. He received his PhD in Electrical & Computer Engineering in 2015 from Colorado State University. 
 </p>
 
 
