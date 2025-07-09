@@ -52,6 +52,11 @@ Co-Host: Philipp Edelmann <a href="https://orcid.org/0000-0001-7019-9578"><i cla
       <td><b>Date</b></td>
   </tr>
   <tr>
+      <td>Michael L Norman </td>
+      <td><a href="#fy266">Introducing Enzo-E, an extreme scale AMR radiation hydrodynamic cosmology code built on Charm++</a></td>
+      <td>07/23/2025</td>
+  </tr>
+  <tr>
       <td>Tim Burke</td>
       <td><a href="#fy265">AI for code development at LANL</a></td>
       <td>07/09/2025</td>
@@ -144,6 +149,20 @@ Co-Host: Philipp Edelmann <a href="https://orcid.org/0000-0001-7019-9578"><i cla
 </table>
 
 <h2>Talks</h2>
+<div id="fy266"></div>
+<h3>Introducing Enzo-E, an extreme scale AMR radiation hydrodynamic cosmology code built on Charm++</h3>
+Speaker: Michael L Norman<br>
+Distinguished Professor of Astronomy and Astrophysics at UC San Diego<br><br>
+
+Abstract:
+<p>
+Enzo-E is a new, extreme-scale implementation of the venerable Enzo community code (enzo-project.org) for astrophysics and cosmology simulation. Enzo has been in widespread use since the early 2000’s but was not designed for today’s HPC architectures. Enzo-E achieves its extreme scalability through the adoption of a forest-of-octrees AMR mesh approach and the use of the Charm++ parallel object framework which manages the fully distributed AMR data structure. Charm++ is a message-driven asynchronous many-task framework developed at UIUC (charm.cs.illinois.edu). In this talk I briefly review Enzo-E’s software design, core AMR methods, physics algorithms, and scalability results. Recently, we incorporated a deep learning surrogate model for star formation and feedback which relaxes the resolution requirements in large cosmological simulations of the first galaxies. Current development work is focused on implementing hierarchical adaptive time stepping similar to Enzo’s. Performance studies suggest a 5-10x speedup over the current global timestep approach.
+</p>
+
+Bio:
+<p>
+Michael L Norman is Distinguished Professor of Astronomy and Astrophysics at UC San Diego and former director of the San Diego Supercomputer Center. He received his PhD in Engineering and Applied Science from UC Davis while working at the Lawrence Livermore National Laboratory. Subsequently he held research positions at the Max Planck Institute for Astrophysics, Los Alamos National Laboratory, and National Center for Supercomputing Applications, UIUC. His research group, the Laboratory for Computational Astrophysics (est. 1991) develops community application software for astrophysical simulation on supercomputers including ZEUS-2D, ZEUS-3D, ZEUS-MP, Enzo, and Enzo-E. His scientific interests include astrophysical and cosmological fuid dynamics with applications to star formation, interstellar medium, supernova remnants, astrophysical jets, galaxy formation, and X-ray clusters. His technical interests include algorithm development, code development, and parallel computing. In his role as SDSC director, he served as PI for the Gordon, Comet, and Expanse national HPC systems and is currently PI of the CloudBank cloud access project funded by the NSF.
+</p>
 
 <div id="fy265"></div>
 <h3>AI for code development at LANL</h3>
