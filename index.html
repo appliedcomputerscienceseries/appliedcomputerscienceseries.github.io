@@ -53,8 +53,14 @@ Co-Host: Philipp Edelmann <a href="https://orcid.org/0000-0001-7019-9578"><i cla
   </tr>
   <tr>
       <td>Rene Gassmoeller</td>
-      <td><a href="#fy269">What We Need to Model Planetary Interiors: The Role of Research Software in Computational Geodynamics</a></td>
+      <td><a href="#fy272">What We Need to Model Planetary Interiors: The Role of Research Software in Computational Geodynamics</a></td>
       <td>10/15/2025</td>
+  </tr>
+  <tr>
+      <td>CJ Solomon</td>
+      <td><a href="#fy271">To Interoperability And Beyond: Interoperable Types Through the Promises of C and C++ and ABI Abuse
+</a></td>
+      <td>10/02/2025</td>
   </tr>
    <tr>
        <td></td>
@@ -170,7 +176,7 @@ Co-Host: Philipp Edelmann <a href="https://orcid.org/0000-0001-7019-9578"><i cla
 
 <h2>Talks</h2>
 
-<div id="fy269"></div>
+<div id="fy272"></div>
 <h3>What We Need to Model Planetary Interiors: The Role of Research Software in Computational Geodynamics</h3>
 Speaker: Rene Gassmoeller<br>
 GEOMAR Helmholtz Centre for Ocean Research Kiel, Germany<br><br>
@@ -215,6 +221,20 @@ mathematics, and software engineering, with a particular focus on
 processes in the deep Earth and developing the software we need to
 understand them.
 </p>
+
+<div id="fy271"></div>
+<h3>To Interoperability And Beyond: Interoperable Types Through the Promises of C and C++ and ABI Abuse</h3>
+Speaker: CJ Solomon<br>
+Los Alamos National Laboratory<br><br>
+
+Abstract:
+<p>
+Performance portability APIs, e.g., Kokkos, RAJA, etc., are typically written in C++ but many high-performance computing (HPC) codes are written in Fortran.  This presents a challenge for the Fortran simulation codes in being able to shuffle data representations from Fortran to C++, particularly when those data make heavy use of Fortran derived types.  This talk will present a solution developed by LANL’s Eulerian Applications Project (EAP) so that Fortran derived types can be easily migrated from Fortran to C++ and data migrated to the requisite memory spaces to be operated upon by a C++ performance portability library.  The approach builds upon the Fortran 2018 standard “ISO_Fortran_binding.h” header and specialized processing tools to auto generate interoperable types that, in C++, have introspective capability.  The introspective capability of the resulting types allow for transformations of internal data via user defined transformation functions, e.g., to convert Fortran assumed shape arrays into Kokkos::Views
+</p>
+Links:
+<ul>
+    <li><a href="https://github.com/lanl/dopey">dopey</a> </li>
+</ul>
 
 <div id="fy267"></div>
 <h3>First digital biophysical model of the entire human cardiovascular system</h3>
