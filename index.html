@@ -52,6 +52,11 @@ Co-Host: Philipp Edelmann <a href="https://orcid.org/0000-0001-7019-9578"><i cla
       <td><b>Date</b></td>
   </tr>
   <tr>
+      <td>Chen Zhang</td>
+      <td><a href="#fy273">From Anaconda to Pixi: Modernizing Python Package Management for Neutron Science at ORNL</a></td>
+      <td>11/12/2025</td>
+  </tr>
+  <tr>
       <td>Rene Gassmoeller</td>
       <td><a href="#fy272">What We Need to Model Planetary Interiors: The Role of Research Software in Computational Geodynamics</a></td>
       <td>10/15/2025</td>
@@ -176,6 +181,25 @@ Co-Host: Philipp Edelmann <a href="https://orcid.org/0000-0001-7019-9578"><i cla
 
 <h2>Talks</h2>
 
+<div id="fy273"></div>
+<h3>From Anaconda to Pixi: Modernizing Python Package Management for Neutron Science at ORNL</h3>
+Speaker: Chen Zhang<br>
+Oak Ridge National Laboratory<br><br>
+
+Abstract:
+<p>
+The neutron science community at Oak Ridge National Laboratory faces unique challenges in managing complex software dependencies across diverse computing environments, from development workstations to production deployment at the Spallation Neutron Source (SNS) and High Flux Isotope Reactor (HFIR). Following Anaconda's licensing changes and mounting technical limitations, we undertook a comprehensive evaluation of modern Python package management solutions to support our neutron data reduction infrastructure.
+This talk presents our journey from Anaconda to Pixi, detailing the selection criteria, evaluation process, and practical implementation across our software ecosystem. I will discuss how we assessed alternatives including uv, Poetry, PDM, and micromamba, and why Pixi ultimately met our requirements for reproducibility, performance, and cross-platform compatibility. Through concrete examples from our neutron data projects, I will demonstrate Pixi-based workflows for both pure Python and mixed Python/C++ projects, including our open-source template repository for standardized project setup.
+The presentation will cover the complete software lifecycle: from development and testing to packaging for PyPI and conda-forge, and finally to production deployment supporting real-time neutron data reduction at ORNL's flagship facilities. I will share lessons learned, best practices, and practical strategies that may benefit other scientific computing teams facing similar infrastructure modernization challenges.
+</p>
+
+Bio:
+<p>
+Dr. Chen Zhang is a Computational Scientist in the Computer Science and Mathematics Division at Oak Ridge National Laboratory (ORNL), where he specializes in scientific software development, machine learning applications, and high-performance computing for neutron science. He received his B.S. in Materials Science and Engineering from Shanghai Jiao Tong University and his Ph.D. in Materials Science and Engineering from Michigan State University.
+Prior to joining ORNL, Dr. Zhang held postdoctoral positions at Carnegie Mellon University and Colorado School of Mines, where he developed automated data reduction software and real-time control systems for high-throughput X-ray diffraction experiments at Argonne National Laboratory's Advanced Photon Source.
+At ORNL, Dr. Zhang contributes to software infrastructure development for neutron scattering facilities at the Spallation Neutron Source (SNS) and High Flux Isotope Reactor (HFIR), with a focus on neutron imaging applications. His work includes developing BM3DORNL, an open-source library for artifact removal in neutron tomography; creating FuGNN (Fusion Graph Neural Network) for applications in neutron reflectometry and power-grid analysis; leading the refactoring effort for PLEIADES v2.0, a neutron resonance data reduction software originally developed at Los Alamos National Laboratory; and contributing to iBeatles, the data reduction engine for neutron Bragg edge strain mapping at ORNL's VENUS beamline, where he addressed packaging challenges and implemented command-line batch processing capabilities. He is an active contributor to open-source scientific computing projects and serves as a reviewer for several journals in computational materials science and neutron scattering.
+</p>
+
 <div id="fy272"></div>
 <h3>What We Need to Model Planetary Interiors: The Role of Research Software in Computational Geodynamics</h3>
 Speaker: Rene Gassmoeller<br>
@@ -233,7 +257,7 @@ Performance portability APIs, e.g., Kokkos, RAJA, etc., are typically written in
 </p>
 Links:
 <ul>
-    <li><a href="https://github.com/lanl/dopey">Githhub</a> </li>
+    <li><a href="https://github.com/lanl/dopey">Github</a> </li>
     <li><a href="https://www.osti.gov/biblio/2372657">Slides</a></li> 
 </ul>
 
