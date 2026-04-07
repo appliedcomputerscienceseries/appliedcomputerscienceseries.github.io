@@ -242,6 +242,22 @@ Bio:
 Dinesh Parthasarathy is a PhD candidate in Computer Science at Friedrich-Alexander University Erlangen-Nürnberg (FAU). His research focuses on using artificial intelligence (AI), particularly evolutionary algorithms, to design efficient numerical methods and multigrid solvers for large-scale scientific simulations. He previously interned with the hypre team at Lawrence Livermore National Laboratory and continues to collaborate on AI-driven approaches for solver design.
 </p>
 
+<div id="fy2712"></div>
+<h3>Building Scientific Software in Rust: A Case Study in Multiscale Geometry and Transport</h3>
+Speaker: Joshua Lewis<br>
+Los Alamos National Laboratory<br><br>
+
+Abstract:
+<p>
+High-performance scientific codes are often asked to do much more than execute numerical kernels efficiently. They must manage complex simulation state, operate within tight memory constraints, adapt as scientific questions evolve, and ultimately scale to modern parallel hardware. In this talk, I will discuss why Rust is an especially promising language for this setting. Its ownership model and borrow checker are central advantages, but Rust’s value in HPC also comes from how it promotes explicit control over memory and data movement, strong compile-time correctness, and software architectures that support both performance and safe parallelism. These features are especially relevant for the kinds of long-lived scientific codes common in laboratory computing environments, where research software must often grow into robust, scalable infrastructure.
+To ground these ideas, I will present a case study drawn from a scientific codebase for multiscale geometry generation and transport simulation. The code involves stochastic placement algorithms, custom quadtree-based spatial data structures, event-driven ray tracing, and statistical analysis pipelines, all of which place competing demands on performance, correctness, and extensibility. Using this example, I will highlight how Rust can help scientific software evolve from an exploratory prototype into more robust computational infrastructure. The talk is intended for researchers and developers interested in how programming language design, software architecture, and applied scientific computing intersect in practice.
+</p>
+
+Bio:
+<p>
+Joshua Lewis is a postdoctoral researcher at Los Alamos National Laboratory whose work spans computational condensed matter physics, frustrated magnetic systems, and scientific software for high-performance computing. He earned his Ph.D. in Applied Physics from the Colorado School of Mines in 2025, where his research focused on the role of fractional derivatives in physical theory, with an emphasis on quantum models, fractional diffusion, and numerical methods for matrix product state simulations. His broader research is centered on Monte Carlo approaches to many-body systems, spin-ice and other frustrated magnetic materials, and multiscale transport, with a particular interest in tackling challenging numerical problems in computational physics. He is especially interested in optimization and in developing high-performance simulation tools that combine computational efficiency with strong physical insight.
+</p>
+
 <div id="fy277"></div>
 <h3>An evaluation of risks associated with abandoning Fortran</h3>
 Speaker: Damian Rouson<br>
