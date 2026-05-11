@@ -74,7 +74,7 @@ Co-Host: Philipp Edelmann <a href="https://orcid.org/0000-0001-7019-9578"><i cla
   </tr>
   <tr>
       <td>Matthew Blomquist</td>
-      <td><a href="#fy2717">TBA</a></td>
+      <td><a href="#fy2717">Distributed-Memory Real-Space Parallel DMRG for Large-Scale Matrix Product States</a></td>
       <td>07/13/2026</td>
   </tr>
   <tr>
@@ -267,6 +267,24 @@ Co-Host: Philipp Edelmann <a href="https://orcid.org/0000-0001-7019-9578"><i cla
 </table>
 
 <h2>Talks</h2>
+
+
+<div id="fy2717"></div>
+<h3>Distributed-Memory Real-Space Parallel DMRG for Large-Scale Matrix Product States</h3>
+Speaker: Matthew Blomquist<br>
+National Energy Research Scientific Computing Center (NERSC)<br><br>
+
+Abstract:
+<p>
+We present performance results of a real-space parallel density matrix renormalization group (DMRG) algorithm on the Perlmutter supercomputer. Real-space parallel DMRG distributes the computational workload across sites of the matrix product state (MPS), and has primarily been used in the literature to add parallelism to the standard two-site DMRG. In this work, we leverage the real-space parallel approach to create a distributed-memory framework for performing DMRG on very large MPS that exceed the memory capacity of a single node. We show scaling results for one- and two-dimensional Heisenberg models, provide insights into load balancing, and detail the implementation considerations necessary to run the code at scale. Finally, we describe how this work aligns with the NERSC Science Acceleration Program (NESAP) for the Doudna supercomputer and how our Julia-based implementation leverages JACC.jl to support performance-portable and scalable execution on next-generation hardware.
+</p>
+
+Bio:
+<p>
+Dr. Matthew Blomquist is a NESAP Postdoctoral Fellow at the National Energy Research Scientific Computing Center (NERSC) at Lawrence Berkeley National Laboratory. He received his Ph.D. from the University of California, Merced. His research focuses on developing high-fidelity numerical simulations for interfacial multiphase flows, structure-preserving advection schemes, and the application of tensor networks to problems in high-performance computing. At NERSC, he is currently developing scalable distributed-memory algorithms to enable larger, more accurate simulations on next generation hardware.
+</p>
+
+
 
 <div id="fy2714"></div>
 <h3>Parallel Performance Evaluation Using the TAU Performance System</h3>
