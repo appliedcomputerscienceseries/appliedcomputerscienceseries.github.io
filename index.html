@@ -59,7 +59,7 @@ Co-Host: Philipp Edelmann <a href="https://orcid.org/0000-0001-7019-9578"><i cla
   </tr>
   <tr>
       <td>Ryan Friese</td>
-      <td><a href="#fy2716">TBA</a></td>
+      <td><a href="#fy2716">Lamellar: Enabling Memory-Safe Distributed HPC in Rust</a></td>
       <td>07/29/2026</td>
   </tr>
   <tr>
@@ -268,6 +268,23 @@ Co-Host: Philipp Edelmann <a href="https://orcid.org/0000-0001-7019-9578"><i cla
 
 <h2>Talks</h2>
 
+<div id="fy2716"></div>
+<h3>Lamellar: Enabling Memory-Safe Distributed HPC in Rust</h3>
+Speaker: Ryan D. Friese<br>
+Pacific Northwest National Laboratory<br><br>
+
+Abstract:
+<p>
+High-performance computing has long depended on programming environments that prioritize performance over memory safety, data-race freedom, and software maintainability. As systems grow in scale and complexity, this tradeoff is increasingly difficult to justify. Rust, with its compile-time safety guarantees and zero-cost abstractions, offers a compelling foundation for building system software that is both safe and efficient. A question remains though, what does it look like to build core distributed runtime infrastructure for HPC in Rust?
+This talk presents Lamellar, an asynchronous distributed runtime developed at Pacific Northwest National Laboratory to explore that question. Lamellar supports large-scale distributed-memory applications while leveraging Rust's ownership model, type system, and async execution to improve correctness and productivity. I will discuss the design principles behind Lamellar, how Rust's safety guarantees apply in a distributed setting, and the practical challenges of bringing Rust into HPC system software—including interoperability with established environments and the tension between expressive abstractions and predictable performance.
+Beyond the specifics of Lamellar, the talk considers what Rust may mean for the future of HPC software more broadly, arguing that safety, performance, and productivity need not be competing objectives but can be pursued together as first-class design goals.
+
+</p>
+
+Bio:
+<p>
+Dr. Ryan Friese is a senior computer scientist at Pacific Northwest National Laboratory in the Future Computing Technologies group. His research interests span hardware/software co-design of runtime and system software for novel architectures, HPC (high performance computing) network simulation and modeling, the analysis and optimization of data movement in large scale distributed workflows, and performance modeling of irregular applications. His recent work has focused on enabling memory safe programming on HPC systems by leading the development of the Lamellar Runtime, an asynchronous distributed runtime written in the Rust Programming Language. He received his PhD in Electrical & Computer Engineering in 2015 from Colorado State University.
+</p>
 
 <div id="fy2717"></div>
 <h3>Distributed-Memory Real-Space Parallel DMRG for Large-Scale Matrix Product States</h3>
