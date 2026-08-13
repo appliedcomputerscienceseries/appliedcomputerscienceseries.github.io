@@ -1,374 +1,473 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Advances in Applied Computer Science Invited Speaker Series</title>
 <style>
+:root {
+  color-scheme: dark;
+  --background: #0b0f14;
+  --surface: #151b23;
+  --text: #f5f7fa;
+  --muted: #cbd5e1;
+  --link: #8bd5ff;
+  --visited: #d6bcfa;
+  --focus: #ffd166;
+  --border: #64748b;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  font-family: 'Roboto Mono';
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 1rem;
+  line-height: 1.65;
 }
-a:link {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
-}
-a:visited {
-  color:white;
-  background-color: transparent;
-  text-decoration: none;
-}
-a:hover {
-  color: white;
-  background-color: transparent;
+main, .site-footer { width: min(100% - 2rem, 78rem); margin-inline: auto; }
+main { padding-block: 2rem 4rem; }
+h1, h2, h3, h4 { line-height: 1.25; text-wrap: balance; }
+h1 { max-width: 32ch; }
+h2 { margin-top: 2.5rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--border); }
+h3 { margin-top: 2.75rem; scroll-margin-top: 1rem; }
+h4 { margin: 1.5rem 0 0.25rem; }
+p, li { max-width: 80ch; }
+a {
+  color: var(--link);
   text-decoration: underline;
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.18em;
+  overflow-wrap: anywhere;
 }
-a:active {
-  color: white;
-  background-color: transparent;
-  text-decoration: underline;
+a:visited { color: var(--visited); }
+a:hover { text-decoration-thickness: 0.2em; }
+a:focus-visible, [tabindex="-1"]:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 0.15rem;
 }
-li::marker {
-  color: white;
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--focus);
+  color: #111827;
+  font-weight: 700;
+  transform: translateY(-150%);
 }
+.skip-link:focus { color: #111827; transform: translateY(0); }
+.hosts { max-width: none; }
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  margin-inline: 0.15rem;
+  vertical-align: middle;
+}
+.icon-link i { font-size: 1.25rem; }
+.events-table { width: 100%; border-collapse: collapse; margin-block: 1rem 2rem; }
+.events-table caption { padding: 0.75rem; color: var(--muted); text-align: left; }
+.events-table th, .events-table td {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+.events-table thead th { background: var(--surface); }
+.events-table td:nth-child(2) a { display: flex; align-items: center; min-height: 44px; }
+.events-table .fiscal-year th { background: var(--surface); color: var(--muted); text-align: center; }
+.site-footer { padding-block: 1.5rem 2rem; border-top: 1px solid var(--border); text-align: center; }
+.site-footer p { max-width: none; }
+@media (max-width: 48rem) {
+  main, .site-footer { width: min(100% - 1rem, 78rem); }
+  .events-table, .events-table tbody { display: block; }
+  .events-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .events-table tr { display: block; }
+  .events-table tbody tr:not(.fiscal-year) {
+    margin-block: 1rem;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+  }
+  .events-table td {
+    display: grid;
+    grid-template-columns: minmax(5.5rem, 30%) minmax(0, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .events-table td:last-child { border-bottom: 0; }
+  .events-table td::before { content: attr(data-label); color: var(--muted); font-weight: 700; }
+  .events-table .fiscal-year th {
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    border: 1px solid var(--border);
+  }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
 </head>
-<body style="background-color:black;color:white;">
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<main id="main-content" tabindex="-1">
 
 <h1>Advances in Applied Computer Science Invited Speaker Series</h1>
 
-In applied computer science new programming languages and paradigms, like Rust and Julia, new architectures, like Arm and RISC-V, and new GPUâ€™s, like NVidiaâ€™s Grace Hopper, AMD's MI300A or Intel Max, are emerging. To keep on top of these advances, the Advances in Applied Computer Science series will invite speakers from academia, industry, and national labs. This will allow researchers and code developers to learn about these new tools and technologies and integrate them into codes to prepare them for future hardware and software.
 <p>
-Host: Patrick Diehl <a href="https://linkedin.com/in/patrickdiehl"><i class="fa fa-linkedin-square" style="font-size:18px"></i> <a href="https://orcid.org/0000-0003-3922-8419"><i class="ai ai-orcid-square" style="font-size:18px"></i></a></a><br>
-Co-Host: Philipp Edelmann <a href="https://orcid.org/0000-0001-7019-9578"><i class="ai ai-orcid-square ai-2x" style="font-size:18px"></i></a><br>
+In applied computer science new programming languages and paradigms, like Rust and Julia, new architectures, like Arm and RISC-V, and new GPU’s, like NVidia’s Grace Hopper, AMD's MI300A or Intel Max, are emerging. To keep on top of these advances, the Advances in Applied Computer Science series will invite speakers from academia, industry, and national labs. This will allow researchers and code developers to learn about these new tools and technologies and integrate them into codes to prepare them for future hardware and software.
+</p>
+<p class="hosts">
+Host: Patrick Diehl
+<a class="icon-link" aria-label="Patrick Diehl on LinkedIn" href="https://linkedin.com/in/patrickdiehl"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+<a class="icon-link" aria-label="Patrick Diehl ORCID profile" href="https://orcid.org/0000-0003-3922-8419"><i class="ai ai-orcid-square" aria-hidden="true"></i></a><br>
+Co-Host: Philipp Edelmann
+<a class="icon-link" aria-label="Philipp Edelmann ORCID profile" href="https://orcid.org/0000-0001-7019-9578"><i class="ai ai-orcid-square" aria-hidden="true"></i></a>
+</p>
 
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 
-<table style="width:90%">
-  <tr>
-      <td><b>Speaker</b></td>
-      <td><b>Title</b></td>
-      <td><b>Date</b></td>
-  </tr>
-  <tr>
-      <td>Edgar Leon</td>
-      <td><a href="#fy271">Taming Performance Variability at Exascale: Mitigating OS Noise on El Capitan</a></td>
-      <td>09/15/2026</td>
-  </tr>
-  <tr>
-      <td>Martin Schulz</td>
-      <td><a href="#fy273">From HPC to HPCQC: Software Foundations for Hybrid Classicalâ€“Quantum Computing</a></td>
-      <td>08/26/2026</td>
-  </tr>
-  <tr>
-      <td>Mose Giordano</td>
-      <td><a href="#fy272">Julia meets the Intelligence Processing Unit</a></td>
-      <td>08/27/2026</td>
-  </tr>
-  <tr>
-      <td>Piotr ÅuczyÅ„ski</td>
-      <td><a href="#fy274">Approaches and Challenges in Porting Scientific Applications to the Cerebras Wafer-Scale Engine</a></td>
-      <td>08/19/2026</td>
-  </tr>
-  <tr>
-      <td>Brandon Giles / Joseph Glick</td>
-      <td><a href="#fy275">Q-PAC -- An Open Architecture System with Full Pulse Control for QEC Development</a></td>
-      <td>08/18/2026</td>
-  </tr>
-  <tr>
-      <td>Chris Taylor</td>
-      <td><a href="#fy276">From RISC-V Accelerators to Galaxy Systems: Tenstorrent Hardware, Software, and AI Performance</a></td>
-      <td>08/12/2026</td>
-  </tr>
-  <tr>
-      <td>Ryan Friese</td>
-      <td><a href="#fy277">Lamellar: Enabling Memory-Safe Distributed HPC in Rust</a></td>
-      <td>07/29/2026</td>
-  </tr>
-  <tr>
-      <td>Cindy Rubio-GonzÃ¡lez</td>
-      <td><a href="#fy278">Automated Floating-Point Precision Tuning: Challenges, Progress, and Future Opportunities</a></td>
-      <td>07/22/2026</td>
-  </tr>
-  <tr>
-      <td>William Godoy / Philip Fackler</td>
-      <td><a href="#fy2711">ORNL R&D efforts on HPC programming: LLMs and high-productivity languages</a></td>
-      <td>07/15/2026</td>
-  </tr>
-  <tr>
-      <td>Ermal Rrapaj</td>
-      <td><a href="#fy2710">Scientific research through the lens of qutrits: Neutrino flavor oscillations and discrete time crystals</a></td>
-      <td>07/14/2026</td>
-  </tr>
-  <tr>
-      <td>Matthew Blomquist</td>
-      <td><a href="#fy279">Distributed-Memory Real-Space Parallel DMRG for Large-Scale Matrix Product States</a></td>
-      <td>07/16/2026</td>
-  </tr>
-  <tr>
-      <td>Teo Price-Broncucia</td>
-      <td><a href="#fy2712">Ensemble Based Consistency Testing: Keeping Chaotic Codes on Course</a></td>
-      <td>07/01/2026</td>
-  </tr>
-  <tr>
-      <td>Sameer Shende</td>
-      <td><a href="#fy2713">Parallel Performance Evaluation Using the TAU Performance System</a></td>
-      <td>06/15/2026</td>
-  </tr>
-  <tr>
-      <td>Dinesh Parthasarathy</td>
-      <td><a href="#fy2714">Evolving Classical PDE Solvers: A Grammar-based Approach Using Evolutionary Algorithms</a></td>
-      <td>06/10/2026</td>
-  </tr>
-  <tr>
-      <td>William Moses</td>
-      <td><a href="#fy2715">Enzyme: High-Performance, Cross-Language, and Parallel Automatic Differentiation</a></td>
-      <td>05/27/2026</td>
-  </tr>
-  <tr>
-      <td>Josh Lewis</td>
-      <td><a href="#fy2716">Building Scientific Software in Rust: A Case Study in Multiscale Geometry and Transport
+<table class="events-table">
+  <caption>Speaker series schedule and archive</caption>
+  <thead>
+    <tr>
+      <th scope="col">Speaker</th>
+      <th scope="col">Title</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Speaker">Edgar Leon</td>
+      <td data-label="Title"><a href="#fy271">Taming Performance Variability at Exascale: Mitigating OS Noise on El Capitan</a></td>
+      <td data-label="Date"><time datetime="2026-09-15">09/15/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Martin Schulz</td>
+      <td data-label="Title"><a href="#fy273">From HPC to HPCQC: Software Foundations for Hybrid Classical–Quantum Computing</a></td>
+      <td data-label="Date"><time datetime="2026-08-26">08/26/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Mose Giordano</td>
+      <td data-label="Title"><a href="#fy272">Julia meets the Intelligence Processing Unit</a></td>
+      <td data-label="Date"><time datetime="2026-08-27">08/27/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Piotr Łuczyński</td>
+      <td data-label="Title"><a href="#fy274">Approaches and Challenges in Porting Scientific Applications to the Cerebras Wafer-Scale Engine</a></td>
+      <td data-label="Date"><time datetime="2026-08-19">08/19/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Brandon Giles / Joseph Glick</td>
+      <td data-label="Title"><a href="#fy275">Q-PAC — An Open Architecture System with Full Pulse Control for QEC Development</a></td>
+      <td data-label="Date"><time datetime="2026-08-18">08/18/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Chris Taylor</td>
+      <td data-label="Title"><a href="#fy276">From RISC-V Accelerators to Galaxy Systems: Tenstorrent Hardware, Software, and AI Performance</a></td>
+      <td data-label="Date"><time datetime="2026-08-12">08/12/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Ryan Friese</td>
+      <td data-label="Title"><a href="#fy277">Lamellar: Enabling Memory-Safe Distributed HPC in Rust</a></td>
+      <td data-label="Date"><time datetime="2026-07-29">07/29/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Cindy Rubio-González</td>
+      <td data-label="Title"><a href="#fy278">Automated Floating-Point Precision Tuning: Challenges, Progress, and Future Opportunities</a></td>
+      <td data-label="Date"><time datetime="2026-07-22">07/22/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">William Godoy / Philip Fackler</td>
+      <td data-label="Title"><a href="#fy2711">ORNL R&amp;D efforts on HPC programming: LLMs and high-productivity languages</a></td>
+      <td data-label="Date"><time datetime="2026-07-15">07/15/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Ermal Rrapaj</td>
+      <td data-label="Title"><a href="#fy2710">Scientific research through the lens of qutrits: Neutrino flavor oscillations and discrete time crystals</a></td>
+      <td data-label="Date"><time datetime="2026-07-14">07/14/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Matthew Blomquist</td>
+      <td data-label="Title"><a href="#fy279">Distributed-Memory Real-Space Parallel DMRG for Large-Scale Matrix Product States</a></td>
+      <td data-label="Date"><time datetime="2026-07-16">07/16/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Teo Price-Broncucia</td>
+      <td data-label="Title"><a href="#fy2712">Ensemble Based Consistency Testing: Keeping Chaotic Codes on Course</a></td>
+      <td data-label="Date"><time datetime="2026-07-01">07/01/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Sameer Shende</td>
+      <td data-label="Title"><a href="#fy2713">Parallel Performance Evaluation Using the TAU Performance System</a></td>
+      <td data-label="Date"><time datetime="2026-06-15">06/15/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Dinesh Parthasarathy</td>
+      <td data-label="Title"><a href="#fy2714">Evolving Classical PDE Solvers: A Grammar-based Approach Using Evolutionary Algorithms</a></td>
+      <td data-label="Date"><time datetime="2026-06-10">06/10/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">William Moses</td>
+      <td data-label="Title"><a href="#fy2715">Enzyme: High-Performance, Cross-Language, and Parallel Automatic Differentiation</a></td>
+      <td data-label="Date"><time datetime="2026-05-27">05/27/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Josh Lewis</td>
+      <td data-label="Title"><a href="#fy2716">Building Scientific Software in Rust: A Case Study in Multiscale Geometry and Transport
 </a></td>
-      <td>04/15/2026</td>
-  </tr>
-  <tr>
-      <td>Damian Rouson</td>
-      <td><a href="#fy2717">An evaluation of risks associated with abandoning Fortran</a></td>
-      <td>03/04/2026</td>
-  </tr>
-  <tr>
-      <td>Richard Berger</td>
-      <td><a href="#fy2718">Kessel: Continuous Integration and Developer Workflows</a></td>
-      <td>02/18/2026</td>
-  </tr>
-  <tr>
-      <td>Jamil Gafur</td>
-      <td><a href="#fy2719">Safe and Resource Efficient Neural Networks through architectural collapse</a></td>
-      <td>02/04/2026</td>
-  </tr>
-  <tr>
-      <td>OndÅ™ej ÄŒertÃ­k</td>
-      <td><a href="#fy2720">LFortran - Modern interactive LLVM-based Fortran compiler</a></td>
-      <td>01/14/2026</td>
-  </tr>
-  <tr>
-      <td>Damien Lebrun-GrandiÃ©</td>
-      <td><a href="#fy2721">From Kernels to Standards: How Kokkos and Modern C++ Future-Proof Critical Simulation Codes</a></td>
-      <td>01/07/2026</td>
-  </tr>
-  <tr>
-      <td>Alejandra Castillo</td>
-      <td><a href="#fy2722">Randomized Methods for Corrupted Tensor Systems</a></td>
-      <td>12/03/2025</td>
-  </tr>
-  <tr>
-      <td>Chen Zhang</td>
-      <td><a href="#fy2723">From Anaconda to Pixi: Modernizing Python Package Management for Neutron Science at ORNL</a></td>
-      <td>11/12/2025</td>
-  </tr>
-  <tr>
-    <td>Abdel-Hameed (Hameed) A. Badawy</td>
-    <td><a href="#fy2724">PPT-GPU 2.0: An Accurate, Scalable, Hybrid Performance Model for Modern GPGPUs</a></td>
-    <td>10/29/2025</td>
-  </tr>
-  <tr>
-      <td>Rene Gassmoeller</td>
-      <td><a href="#fy2725">What We Need to Model Planetary Interiors: The Role of Research Software in Computational Geodynamics</a></td>
-      <td>10/15/2025</td>
-  </tr>
-  <tr>
-      <td>CJ Solomon</td>
-      <td><a href="#fy2726">To Interoperability And Beyond: Interoperable Types Through the Promises of C and C++ and ABI Abuse
+      <td data-label="Date"><time datetime="2026-04-15">04/15/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Damian Rouson</td>
+      <td data-label="Title"><a href="#fy2717">An evaluation of risks associated with abandoning Fortran</a></td>
+      <td data-label="Date"><time datetime="2026-03-04">03/04/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Richard Berger</td>
+      <td data-label="Title"><a href="#fy2718">Kessel: Continuous Integration and Developer Workflows</a></td>
+      <td data-label="Date"><time datetime="2026-02-18">02/18/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Jamil Gafur</td>
+      <td data-label="Title"><a href="#fy2719">Safe and Resource Efficient Neural Networks through architectural collapse</a></td>
+      <td data-label="Date"><time datetime="2026-02-04">02/04/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Ondřej Čertík</td>
+      <td data-label="Title"><a href="#fy2720">LFortran - Modern interactive LLVM-based Fortran compiler</a></td>
+      <td data-label="Date"><time datetime="2026-01-14">01/14/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Damien Lebrun-Grandié</td>
+      <td data-label="Title"><a href="#fy2721">From Kernels to Standards: How Kokkos and Modern C++ Future-Proof Critical Simulation Codes</a></td>
+      <td data-label="Date"><time datetime="2026-01-07">01/07/2026</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Alejandra Castillo</td>
+      <td data-label="Title"><a href="#fy2722">Randomized Methods for Corrupted Tensor Systems</a></td>
+      <td data-label="Date"><time datetime="2025-12-03">12/03/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Chen Zhang</td>
+      <td data-label="Title"><a href="#fy2723">From Anaconda to Pixi: Modernizing Python Package Management for Neutron Science at ORNL</a></td>
+      <td data-label="Date"><time datetime="2025-11-12">11/12/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Abdel-Hameed (Hameed) A. Badawy</td>
+      <td data-label="Title"><a href="#fy2724">PPT-GPU 2.0: An Accurate, Scalable, Hybrid Performance Model for Modern GPGPUs</a></td>
+      <td data-label="Date"><time datetime="2025-10-29">10/29/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Rene Gassmoeller</td>
+      <td data-label="Title"><a href="#fy2725">What We Need to Model Planetary Interiors: The Role of Research Software in Computational Geodynamics</a></td>
+      <td data-label="Date"><time datetime="2025-10-15">10/15/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">CJ Solomon</td>
+      <td data-label="Title"><a href="#fy2726">To Interoperability And Beyond: Interoperable Types Through the Promises of C and C++ and ABI Abuse
 </a></td>
-      <td>10/02/2025</td>
-  </tr>
-   <tr>
-       <td></td>
-       <td><b>Fiscal year 2025</b></td>
-       <td></td>
-  </tr>
-  <tr>
-      <td>Maxwell Cole</td>
-      <td><a href="#fy267">First digital biophysical model of the entire human cardiovascular system</a></td>
-      <td>08/27/2025</td>
-  </tr>
-  <tr>
-      <td>Michael L Norman</td>
-      <td><a href="#fy268">Computational cosmology meets AI: the birth of a surrogate model for subscale physics</a></td>
-      <td>08/13/2025</td>
-  </tr>
-  <tr>
-      <td>Michael L Norman </td>
-      <td><a href="#fy266">Introducing Enzo-E, an extreme scale AMR radiation hydrodynamic cosmology code built on Charm++</a></td>
-      <td>07/23/2025</td>
-  </tr>
-  <tr>
-      <td>Tim Burke</td>
-      <td><a href="#fy265">AI for code development at LANL</a></td>
-      <td>07/09/2025</td>
-  </tr>
-  <tr>
-      <td>Dominic Marcello</td>
-      <td><a href="#fy262">Shedding Light on Interaction Binaries: Radiation Hydrodynamics with Octo-Tiger</a></td>
-      <td>06/25/2025</td>
-  </tr>
-  <tr>
-      <td>Engin Kayraklioglu</td>
-      <td><a href="#fy264">Chapel's Batteries-Included Approach for Portable Parallel Programming</a></td>
-      <td>06/18/2025</td>
-  </tr>
-  <tr>
-      <td>Jiakun Yan</td>
-      <td><a href="#fy258">LCI: a Lightweight Communication Interface for Asynchronous Multithreaded Communication</a></td>
-      <td>05/27/2025</td>
-  </tr>
-  <tr>
-      <td>Monica Van Dieren</td>
-      <td><a href="#fy263">Accelerated Quantum Supercomputing with CUDA-Q</a></td>
-      <td>05/21/2025</td>
-  </tr>
-  <tr>
-      <td>Aparna Chandramowlishwaran</td>
-      <td><a href="#fy261">Scaling AI for Scientific Discovery: Faster Kernels, Efficient Models, Better Physics</a></td>
-      <td>04/15/2025</td>
-  </tr>
-  <tr>
-      <td>Richard Berger</td>
-      <td><a href="#fy260">Driving Continuous Integration and Developer Workflows with Spack</a></td>
-      <td>04/08/2025</td>
-  </tr>
-  <tr>
-      <td>Ryan Friese</td>
-      <td><a href="#fy259">Introducing the Lamellar Runtime: A Modern Approach to High-Performance Computing</a></td>
-      <td>04/02/2025</td>
-  </tr>
-  <tr>
-      <td>Johannes Blaschke</td>
-      <td><a href="#fy257">Deploying and Supporting Julia at NERSC</a></td>
-      <td>03/12/2025</td>
-  </tr>
-  <tr>
-      <td>William Godoy</td>
-      <td><a href="#fy256">The value proposition of the Julia language for DOEâ€™s mission</a></td>
-      <td>03/12/2025</td>
-  </tr>
-  <tr>
-      <td>Jonas Posner</td>
-      <td><a href="#fy255">Transparent Resource Adaptivity for Task-Based Applications on Supercomputers</a></td>
-      <td>02/24/2025</td>
-  </tr>
-  <tr>
-      <td>Jed Brown</td>
-      <td><a href="#fy254">Rust and type safety for MPI and scientific computing</a></td>
-      <td>02/12/2025</td>
-  </tr>
-  <tr>
-      <td>Alexander Holas</td>
-      <td><a href="#fy253">Thermonuclear electron-capture supernovae - Motivating a long-overdue update to the supernova modeling pipeline for the exascale computing age</a></td>
-      <td>01/09/2025</td>
-  </tr>
-  <tr>
-      <td>Gregor Dai&szlig;</td>
-      <td><a href="#fy252">Asynchronous-Many-Task Systems: Challenges and Opportunities - Scaling an AMR Astrophysics Code on Exascale machines using Kokkos and HPX</a></td>
-      <td>12/11/2024</td>
-  </tr>
-  <tr>
-      <td>Chris Taylor</td>
-      <td><a href="#fy251">RISC-V HPC Terrain Familiarization</a></td>
-      <td>12/04/2024</td>
-  </tr>
-   <tr>
-       <td></td>
-       <td><b>Fiscal year 2024</b></td>
-       <td></td>
-  </tr>
-  <tr>
-      <td>Kyle Niemeyer</td>
-      <td><a href="#fy242">Journal of Open Source Software: bot-assisted open peer review and publication</a></td>
-      <td>09/19/2024</td>
-  </tr>
-  <tr>
-      <td>Joseph Schuchart</td>
-      <td><a href="#fy241">Improving MPI Interoperability for Modern Languages and Systems</a></td>
-      <td>08/21/2024</td>
-  </tr>
+      <td data-label="Date"><time datetime="2025-10-02">10/02/2025</time></td>
+    </tr>
+    <tr class="fiscal-year">
+      <th scope="rowgroup" colspan="3">Fiscal year 2025</th>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Maxwell Cole</td>
+      <td data-label="Title"><a href="#fy267">First digital biophysical model of the entire human cardiovascular system</a></td>
+      <td data-label="Date"><time datetime="2025-08-27">08/27/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Michael L Norman</td>
+      <td data-label="Title"><a href="#fy268">Computational cosmology meets AI: the birth of a surrogate model for subscale physics</a></td>
+      <td data-label="Date"><time datetime="2025-08-13">08/13/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Michael L Norman</td>
+      <td data-label="Title"><a href="#fy266">Introducing Enzo-E, an extreme scale AMR radiation hydrodynamic cosmology code built on Charm++</a></td>
+      <td data-label="Date"><time datetime="2025-07-23">07/23/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Tim Burke</td>
+      <td data-label="Title"><a href="#fy265">AI for code development at LANL</a></td>
+      <td data-label="Date"><time datetime="2025-07-09">07/09/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Dominic Marcello</td>
+      <td data-label="Title"><a href="#fy262">Shedding Light on Interaction Binaries: Radiation Hydrodynamics with Octo-Tiger</a></td>
+      <td data-label="Date"><time datetime="2025-06-25">06/25/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Engin Kayraklioglu</td>
+      <td data-label="Title"><a href="#fy264">Chapel's Batteries-Included Approach for Portable Parallel Programming</a></td>
+      <td data-label="Date"><time datetime="2025-06-18">06/18/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Jiakun Yan</td>
+      <td data-label="Title"><a href="#fy258">LCI: a Lightweight Communication Interface for Asynchronous Multithreaded Communication</a></td>
+      <td data-label="Date"><time datetime="2025-05-27">05/27/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Monica Van Dieren</td>
+      <td data-label="Title"><a href="#fy263">Accelerated Quantum Supercomputing with CUDA-Q</a></td>
+      <td data-label="Date"><time datetime="2025-05-21">05/21/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Aparna Chandramowlishwaran</td>
+      <td data-label="Title"><a href="#fy261">Scaling AI for Scientific Discovery: Faster Kernels, Efficient Models, Better Physics</a></td>
+      <td data-label="Date"><time datetime="2025-04-15">04/15/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Richard Berger</td>
+      <td data-label="Title"><a href="#fy260">Driving Continuous Integration and Developer Workflows with Spack</a></td>
+      <td data-label="Date"><time datetime="2025-04-08">04/08/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Ryan Friese</td>
+      <td data-label="Title"><a href="#fy259">Introducing the Lamellar Runtime: A Modern Approach to High-Performance Computing</a></td>
+      <td data-label="Date"><time datetime="2025-04-02">04/02/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Johannes Blaschke</td>
+      <td data-label="Title"><a href="#fy257">Deploying and Supporting Julia at NERSC</a></td>
+      <td data-label="Date"><time datetime="2025-03-12">03/12/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">William Godoy</td>
+      <td data-label="Title"><a href="#fy256">The value proposition of the Julia language for DOE’s mission</a></td>
+      <td data-label="Date"><time datetime="2025-03-12">03/12/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Jonas Posner</td>
+      <td data-label="Title"><a href="#fy255">Transparent Resource Adaptivity for Task-Based Applications on Supercomputers</a></td>
+      <td data-label="Date"><time datetime="2025-02-24">02/24/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Jed Brown</td>
+      <td data-label="Title"><a href="#fy254">Rust and type safety for MPI and scientific computing</a></td>
+      <td data-label="Date"><time datetime="2025-02-12">02/12/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Alexander Holas</td>
+      <td data-label="Title"><a href="#fy253">Thermonuclear electron-capture supernovae - Motivating a long-overdue update to the supernova modeling pipeline for the exascale computing age</a></td>
+      <td data-label="Date"><time datetime="2025-01-09">01/09/2025</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Gregor Dai&szlig;</td>
+      <td data-label="Title"><a href="#fy252">Asynchronous-Many-Task Systems: Challenges and Opportunities - Scaling an AMR Astrophysics Code on Exascale machines using Kokkos and HPX</a></td>
+      <td data-label="Date"><time datetime="2024-12-11">12/11/2024</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Chris Taylor</td>
+      <td data-label="Title"><a href="#fy251">RISC-V HPC Terrain Familiarization</a></td>
+      <td data-label="Date"><time datetime="2024-12-04">12/04/2024</time></td>
+    </tr>
+    <tr class="fiscal-year">
+      <th scope="rowgroup" colspan="3">Fiscal year 2024</th>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Kyle Niemeyer</td>
+      <td data-label="Title"><a href="#fy242">Journal of Open Source Software: bot-assisted open peer review and publication</a></td>
+      <td data-label="Date"><time datetime="2024-09-19">09/19/2024</time></td>
+    </tr>
+    <tr>
+      <td data-label="Speaker">Joseph Schuchart</td>
+      <td data-label="Title"><a href="#fy241">Improving MPI Interoperability for Modern Languages and Systems</a></td>
+      <td data-label="Date"><time datetime="2024-08-21">08/21/2024</time></td>
+    </tr>
+  </tbody>
 </table>
 
-<h2>Talks</h2>
+<h2 id="talks">Talks</h2>
 
-<div id="fy271"></div>
-<h3>Taming Performance Variability at Exascale: Mitigating OS Noise on El Capitan</h3>
+<h3 id="fy271" tabindex="-1">Taming Performance Variability at Exascale: Mitigating OS Noise on El Capitan</h3>
 Speaker: Edgar Leon<br>
 Lawrence Livermore National Laboratory<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
-Exascale systems like El Capitan deliver unprecedented computing power, but their scale and architectural complexity also introduce new performance and variability challenges, especially system noise caused by operating system services and background activity. In this talk, Edgar Leon will highlight a collaboration between Lawrence Livermore National Laboratory (LLNL) and Hewlett Packard Enterprise (HPE) to address system noise on El Capitan, formerly the worldâ€™s fastest verified supercomputer.
- 
+Exascale systems like El Capitan deliver unprecedented computing power, but their scale and architectural complexity also introduce new performance and variability challenges, especially system noise caused by operating system services and background activity. In this talk, Edgar Leon will highlight a collaboration between Lawrence Livermore National Laboratory (LLNL) and Hewlett Packard Enterprise (HPE) to address system noise on El Capitan, formerly the world’s fastest verified supercomputer.
+
 Through OS kernel tuning, system service isolation, and benchmark-driven design, LLNL and HPE developed a distribution-independent, Linux-based mitigation strategy that significantly improves application scalability and reproducibility. Techniques such as CPU and core specialization, interrupt affinity control, and I/O and huge pages management were evaluated and optimized. As a result, several science workloads, including Pennant, Nekbone, and AMG, achieved performance improvements of up to 145% at scale.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Edgar A. Leon is a computer scientist at Lawrence Livermore National Laboratory (LLNL), where he leads research and development in high-performance computing (HPC) to improve the performance, productivity, and portability of scientific applications for next-generation supercomputing systems. His research focuses on operating systems, distributed systems, computer architecture, performance portability, and emerging memory technologies. Prior to joining LLNL, he held research positions at IBM Research and Sandia National Laboratories. Dr. Leon earned his Ph.D. in Computer Science from the University of New Mexico and is a Senior Member of the IEEE in recognition of his contributions to the HPC community.
 </p>
 
-<div id="fy272"></div>
-<h3>Julia meets the Intelligence Processing Unit</h3>
+<h3 id="fy272" tabindex="-1">Julia meets the Intelligence Processing Unit</h3>
 Speaker: Mose Giordano<br>
 University College London<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 The Julia ecosystem developed many ways to interface GPUs, ranging from low-level vendor-specific packages, to high-level abstractions for generic vendor-agnostic GPU programming.  But the ability to use accelerators is not limited to GPUs: by leveraging the LLVM framework, it is possible to run Julia code on completely different devices as well. This includes the Intelligence Processing Unit (IPU), an accelerator for massively parallel workflows developed by Graphcore and powered by 1472 cores. The IPU is mainly employed in machine-learning applications through the optimised libraries developed by Graphcore, but the flexibility of this processor makes it suitable also for many other numerical programs.  Julia offers the unique opportunity to write high-level custom code that can be compiled down to native code for the IPU, without having to directly interface the SDK provided by Graphcore.  In this talk I will present simple benchmarks of Julia code on the IPU, and several applications involving DifferentialEquations.jl, and automatic differentiation via Enzyme.jl.  I will also showcase unusual hardware features available on the IPU, such as stochastic rounding.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Mose Giordano is a Research Software Engineer at the University College London and a long time user of the Julia programming language. His interest is in testing, benchmarking and porting Julia to novel machines and hardware.
 </p>
 
-<div id="fy273"></div>
-<h3>From HPC to HPCQC: Software Foundations for Hybrid Classicalâ€“Quantum Computing</h3>
+<h3 id="fy273" tabindex="-1">From HPC to HPCQC: Software Foundations for Hybrid Classical–Quantum Computing</h3>
 Speaker: Martin Schulz<br>
-Technische UniversitÃ¤t MÃ¼nchen (TUM)<br><br>
+Technische Universität München (TUM)<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
-The evolution of quantum computing is reshaping the landscape of high-performance computing, where quantum processors are increasingly viewed as accelerators complementing classical architectures. Successfully transitioning from HPC to hybrid HPCQC systems requires software solutions that bridge established HPC workflows with rapidly evolving quantum technologies. Within the Munich Quantum Valley (MQV), we are addressing this challenge through the open-source Munich Quantum Software Stack (MQSS) and the Quantum Device Management Interface (QDMI), a vendor-independent interface for quantum hardware integration. This talk presents our vision and practical approach to building a sustainable software foundation for HPCQC, discusses key integration challenges and lessons learned, and outlines the current status and future potential of hybrid classicalâ€“quantum computing infrastructures.
+The evolution of quantum computing is reshaping the landscape of high-performance computing, where quantum processors are increasingly viewed as accelerators complementing classical architectures. Successfully transitioning from HPC to hybrid HPCQC systems requires software solutions that bridge established HPC workflows with rapidly evolving quantum technologies. Within the Munich Quantum Valley (MQV), we are addressing this challenge through the open-source Munich Quantum Software Stack (MQSS) and the Quantum Device Management Interface (QDMI), a vendor-independent interface for quantum hardware integration. This talk presents our vision and practical approach to building a sustainable software foundation for HPCQC, discusses key integration challenges and lessons learned, and outlines the current status and future potential of hybrid classical–quantum computing infrastructures.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-Martin Schulz is a Full Professor and Chair for Computer Architecture and Parallel Systems at the Technische UniversitÃ¤t MÃ¼nchen (TUM), which he joined in 2017, as well as a member of the board of directors at the Leibniz Supercomputing Centre. Prior to that, he held positions at the Center for Applied Scientific Computing (CASC) at Lawrence Livermore National Laboratory (LLNL) and Cornell University. He earned his Doctorate in Computer Science in 2001 from TUM and a Master of Science in Computer Science from UIUC.
+Martin Schulz is a Full Professor and Chair for Computer Architecture and Parallel Systems at the Technische Universität München (TUM), which he joined in 2017, as well as a member of the board of directors at the Leibniz Supercomputing Centre. Prior to that, he held positions at the Center for Applied Scientific Computing (CASC) at Lawrence Livermore National Laboratory (LLNL) and Cornell University. He earned his Doctorate in Computer Science in 2001 from TUM and a Master of Science in Computer Science from UIUC.
 
 Martin's research interests include parallel and distributed architectures and applications; performance monitoring, modeling and analysis; memory system optimization; parallel programming paradigms; tool support for parallel programming; power-aware parallel computing; and fault tolerance at the application and system level, as well as quantum computing and quantum computing architectures and programming, with a special focus on HPC and QC integration.
 
-Martin has published over 400 peer-reviewed papers and currently serves as the chair of the MPI Forum, the standardization body for the Message Passing Interface, one of the dominating standard in High-Performance Computing. He was a recipient of the IEEE/ACM Gordon Bell Award in 2006 and an R&D 100 award in 2011. He served on many conference and workshop organizing and program committees, including as program chair for ISC 2021, PC area chair at IPDPS 2021 and general chair of EuroMPI 2021, Exhibits Chair for SC23 and Tech-Program Co-Chair for SC25.
+Martin has published over 400 peer-reviewed papers and currently serves as the chair of the MPI Forum, the standardization body for the Message Passing Interface, one of the dominating standard in High-Performance Computing. He was a recipient of the IEEE/ACM Gordon Bell Award in 2006 and an R&amp;D 100 award in 2011. He served on many conference and workshop organizing and program committees, including as program chair for ISC 2021, PC area chair at IPDPS 2021 and general chair of EuroMPI 2021, Exhibits Chair for SC23 and Tech-Program Co-Chair for SC25.
 </p>
 
-<div id="fy274"></div>
-<h3>Approaches and Challenges in Porting Scientific Applications to the Cerebras Wafer-Scale Engine</h3>
-Speaker: Piotr ÅuczyÅ„ski<br>
+<h3 id="fy274" tabindex="-1">Approaches and Challenges in Porting Scientific Applications to the Cerebras Wafer-Scale Engine</h3>
+Speaker: Piotr Łuczyński<br>
 Cerebras Systems<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 With the growing demand of AI workloads in training and inference the development of novel hardware accelerators also has gotten more attention, as it promises greater compute-throughput and power efficiency. The Cerebras CS-3 is one such hardware innovation: the system is built from the ground up to accelerate large AI training and inference workloads. The CS-3 is built around the wafer-scale engine (WSE), a single chip consisting of 900,000 processing elements (PEs) laid out in a 2D mesh, with each PE containing 48 kB of memory accessible in a single cycle. While this chip has been explicitly designed to accelerate AI workloads, many of its features also address bottlenecks present in more traditional HPC workloads though might present additional challenges. In this talk, we explore the methodology and challenges of mapping traditional HPC workloads to the Cerebras WSE, using the Livermore Unstructured Lagrangian Explicit Shock Hydrodynamics (LULESH) proxy application as a case study.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Piotr is a Kernel Engineer at Cerebras where he focuses on model bringup and an incoming master student at ETH Zurich. His core interests lie in spatial architectures. Specifically, he explores theoretical modeling using the spatial computer model, alongside applied work on the Cerebras WSE, including message passing and the mapping of scientific applications.
 </p>
 
-<div id="fy275"></div>
-<h3>Q-PAC -- An Open Architecture System with Full Pulse Control for QEC Development</h3>
+<h3 id="fy275" tabindex="-1">Q-PAC — An Open Architecture System with Full Pulse Control for QEC Development</h3>
 Speaker:  Dr. Brandon Giles and Dr. Joseph Glick<br>
 Elevate Quantum / Qblox<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 The Q-PAC system is an open-architecture superconducting quantum testbed optimized to give researchers with
 ability to control and optimize their experiments at every layer of the quantum stack. While using the Q-PAC system,
@@ -379,7 +478,7 @@ grounded picture of what's achievable on Q-PAC now, and hope to inspire conversa
 collaborations.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 <b>Brandon</b> joins Elevate Quantum with over a decade of experience commercializing scientific instrumentation at the
 frontier of achievable measurement and control. His path into quantum began with a curiosity about how materials
@@ -409,139 +508,131 @@ atoms with Bose Einstein condensates (BEC) in optical lattice traps.
 </p>
 
 
-<div id="fy276"></div>
-<h3>From RISC-V Accelerators to Galaxy Systems: Tenstorrent Hardware, Software, and AI Performance</h3>
+<h3 id="fy276" tabindex="-1">From RISC-V Accelerators to Galaxy Systems: Tenstorrent Hardware, Software, and AI Performance</h3>
 Speaker: Chris Taylor<br>
 Tenstorrent<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
-Tenstorrent develops RISC-V based computing solutions targeting artificial intelligence (AI) workloads and general purpose computing. This presentation offers as an introduction to Tenstorrentâ€™s hardware offerings from single accelerator devices to multi-rack Galaxy system deployments. The presentation will include a treatment on tt-metal the Tenstorrent SDK, AI workloads, AI industry performance metrics, and novel work from LSU/Stellar Group and Tactical Computing Labs demonstrating improved FFT performance on Tenstorrent hardware.
+Tenstorrent develops RISC-V based computing solutions targeting artificial intelligence (AI) workloads and general purpose computing. This presentation offers as an introduction to Tenstorrent’s hardware offerings from single accelerator devices to multi-rack Galaxy system deployments. The presentation will include a treatment on tt-metal the Tenstorrent SDK, AI workloads, AI industry performance metrics, and novel work from LSU/Stellar Group and Tactical Computing Labs demonstrating improved FFT performance on Tenstorrent hardware.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Chris is a Senior Staff Engineer at Tenstorrent, where he works in the fabric team supporting network hardware. His work experience includes RISC-V, compilers, runtime systems, systems level software, numerical libraries, applied math problems, and hardware simulation. He has a Masters Degree in Computer Science from Georgia Tech and an undergraduate degree in Computer Science from Clemson.
 </p>
 
 
-<div id="fy277"></div>
-<h3>Lamellar: Enabling Memory-Safe Distributed HPC in Rust</h3>
+<h3 id="fy277" tabindex="-1">Lamellar: Enabling Memory-Safe Distributed HPC in Rust</h3>
 Speaker: Ryan D. Friese<br>
 Pacific Northwest National Laboratory<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 High-performance computing has long depended on programming environments that prioritize performance over memory safety, data-race freedom, and software maintainability. As systems grow in scale and complexity, this tradeoff is increasingly difficult to justify. Rust, with its compile-time safety guarantees and zero-cost abstractions, offers a compelling foundation for building system software that is both safe and efficient. A question remains though, what does it look like to build core distributed runtime infrastructure for HPC in Rust?
-This talk presents Lamellar, an asynchronous distributed runtime developed at Pacific Northwest National Laboratory to explore that question. Lamellar supports large-scale distributed-memory applications while leveraging Rust's ownership model, type system, and async execution to improve correctness and productivity. I will discuss the design principles behind Lamellar, how Rust's safety guarantees apply in a distributed setting, and the practical challenges of bringing Rust into HPC system softwareâ€”including interoperability with established environments and the tension between expressive abstractions and predictable performance.
+This talk presents Lamellar, an asynchronous distributed runtime developed at Pacific Northwest National Laboratory to explore that question. Lamellar supports large-scale distributed-memory applications while leveraging Rust's ownership model, type system, and async execution to improve correctness and productivity. I will discuss the design principles behind Lamellar, how Rust's safety guarantees apply in a distributed setting, and the practical challenges of bringing Rust into HPC system software—including interoperability with established environments and the tension between expressive abstractions and predictable performance.
 Beyond the specifics of Lamellar, the talk considers what Rust may mean for the future of HPC software more broadly, arguing that safety, performance, and productivity need not be competing objectives but can be pursued together as first-class design goals.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-Dr. Ryan Friese is a senior computer scientist at Pacific Northwest National Laboratory in the Future Computing Technologies group. His research interests span hardware/software co-design of runtime and system software for novel architectures, HPC (high performance computing) network simulation and modeling, the analysis and optimization of data movement in large scale distributed workflows, and performance modeling of irregular applications. His recent work has focused on enabling memory safe programming on HPC systems by leading the development of the Lamellar Runtime, an asynchronous distributed runtime written in the Rust Programming Language. He received his PhD in Electrical & Computer Engineering in 2015 from Colorado State University.
+Dr. Ryan Friese is a senior computer scientist at Pacific Northwest National Laboratory in the Future Computing Technologies group. His research interests span hardware/software co-design of runtime and system software for novel architectures, HPC (high performance computing) network simulation and modeling, the analysis and optimization of data movement in large scale distributed workflows, and performance modeling of irregular applications. His recent work has focused on enabling memory safe programming on HPC systems by leading the development of the Lamellar Runtime, an asynchronous distributed runtime written in the Rust Programming Language. He received his PhD in Electrical &amp; Computer Engineering in 2015 from Colorado State University.
 </p>
 
-<div id="fy278"></div>
-<h3>Automated Floating-Point Precision Tuning: Challenges, Progress, and Future Opportunities</h3>
-Speaker: Cindy Rubio-GonzÃ¡lez<br>
+<h3 id="fy278" tabindex="-1">Automated Floating-Point Precision Tuning: Challenges, Progress, and Future Opportunities</h3>
+Speaker: Cindy Rubio-González<br>
 University of California, Davis<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Managing the delicate balance between numerical accuracy and computational performance remains a significant hurdle in high-performance computing and scientific software development. While developers often default to highest-precision formats to ensure reliability, this practice frequently results in substantial overhead in execution time, memory bandwidth, and energy consumption. This talk provides an overview of the evolution of automated precision tuning, tracing the transition from early search-based methods to modern approaches. We will examine the core technical challenges of navigating massive search spaces and the practical complexities of applying these techniques to large-scale, real-world scientific models. The talk will conclude by highlighting emerging opportunities in the field.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-Cindy Rubio-GonzÃ¡lez is a Professor of Computer Science at the University of California, Davis. Her research spans Software Engineering, Programming Languages, and High-Performance Computing, focusing on program analysis and testing to automate bug finding and optimization. She is especially interested in the reliability of systems software and scientific applications. Previously, Cindy was a Postdoctoral Researcher at UC Berkeley and earned her Ph.D. from the University of Wisconsinâ€“Madison. She is a recipient of several awards including the DOE Early Career Award, the NSF CAREER Award, the Better Scientific Software Fellowship, and the Facebook Testing and Verification Research Award.
+Cindy Rubio-González is a Professor of Computer Science at the University of California, Davis. Her research spans Software Engineering, Programming Languages, and High-Performance Computing, focusing on program analysis and testing to automate bug finding and optimization. She is especially interested in the reliability of systems software and scientific applications. Previously, Cindy was a Postdoctoral Researcher at UC Berkeley and earned her Ph.D. from the University of Wisconsin–Madison. She is a recipient of several awards including the DOE Early Career Award, the NSF CAREER Award, the Better Scientific Software Fellowship, and the Facebook Testing and Verification Research Award.
 </p>
 
 
-<div id="fy279"></div>
-<h3>Distributed-Memory Real-Space Parallel DMRG for Large-Scale Matrix Product States</h3>
+<h3 id="fy279" tabindex="-1">Distributed-Memory Real-Space Parallel DMRG for Large-Scale Matrix Product States</h3>
 Speaker: Matthew Blomquist<br>
 National Energy Research Scientific Computing Center (NERSC)<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 We present performance results of a real-space parallel density matrix renormalization group (DMRG) algorithm on the Perlmutter supercomputer. Real-space parallel DMRG distributes the computational workload across sites of the matrix product state (MPS), and has primarily been used in the literature to add parallelism to the standard two-site DMRG. In this work, we leverage the real-space parallel approach to create a distributed-memory framework for performing DMRG on very large MPS that exceed the memory capacity of a single node. We show scaling results for one- and two-dimensional Heisenberg models, provide insights into load balancing, and detail the implementation considerations necessary to run the code at scale. Finally, we describe how this work aligns with the NERSC Science Acceleration Program (NESAP) for the Doudna supercomputer and how our Julia-based implementation leverages JACC.jl to support performance-portable and scalable execution on next-generation hardware.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Dr. Matthew Blomquist is a NESAP Postdoctoral Fellow at the National Energy Research Scientific Computing Center (NERSC) at Lawrence Berkeley National Laboratory. He received his Ph.D. from the University of California, Merced. His research focuses on developing high-fidelity numerical simulations for interfacial multiphase flows, structure-preserving advection schemes, and the application of tensor networks to problems in high-performance computing. At NERSC, he is currently developing scalable distributed-memory algorithms to enable larger, more accurate simulations on next generation hardware.
 </p>
 
-<div id="fy2710"></div>
-<h3>Scientific research through the lens of qutrits: Neutrino flavor oscillations and discrete time crystals</h3>
+<h3 id="fy2710" tabindex="-1">Scientific research through the lens of qutrits: Neutrino flavor oscillations and discrete time crystals</h3>
 Speaker: Ermal Rrapaj <br>
 National Energy Research Scientific Computing Center (NERSC)<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Generally operated as qubits, transmons have readily addressable higher levels, making them natural candidates for operation as quantum three-level systems (qutrits).Ternary quantum information processing in superconducting devices poses a promising alternative to its more popular binary counterpart through larger, more connected computational spaces and proposed advantages in quantum simulation and error correction. Recent works in transmon devices have realized high fidelity single qutrit operation. Nonetheless, effectively engineering a high-fidelity two-qutrit entanglement remains a central challenge for realizing qutrit processing in a transmon device, recently implemented at the Advanced Quantum Testbed (AQT) at the Lawrence Berkeley Laboratory. Using these technology, I present recent results in two different application areas: collective neutrino flavor oscillations and discrete time crystals. Collective neutrino flavor oscillations are of primary importance in understanding the dynamic evolution of core-collapse supernovae and subsequent terrestrial detection, but also among the most challenging aspects of numerical simulations. This situation is complicated by the quantum many-body nature of the problem due to neutrino-neutrino interactions which demands a quantum treatment. An additional complication is the presence of three flavors, which often is approximated by the electron flavor and a heavy lepton flavor. We provide both qubit and qutrit encodings for all three flavors, and develop optimized quantum circuits for the time evolution and analyze the Trotter error. Periodically driven quantum many-body systems can spontaneously break discrete time-translation symmetry, realizing discrete time crystals. To date, both experimental and theoretical efforts have largely focused on the simplest case of spontaneous period-doubling in Z2 discrete time crystals realized with qubits. This owes, in part, to the challenge of stabilizing eigenstate order in higher discrete symmetry time crystals, due to the presence of richer domain wall physics. Here, we demonstrate the realization of a Z3 discrete time crystal by implementing a Floquet chiral clock model in a chain of 15 superconducting qutrits. Unlike the conventional Ising setting, our system features a tunable chiral angle that governs domain-wall dynamics, spectral degeneracies, and crucially, the stability of time-crystalline order.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Ermal Rrapaj is a staff member of the Advanced Technologies Group (ATG) in computational research at Berkeley Lab. Prior to joining ATG, Ermal was a Riken-Berkeley fellow and N3AS fellow.  He is a visiting researcher at the University of California Berkeley Physics Department and Interdisciplinary Theoretical and Mathematical Sciences Program (iTHEMS) RIKEN. Rrapaj's work at NERSC explores the intersection of scientific computing algorithms, deep learning methods for science, HPC system architecture, and quantum computing applications.
 </p>
 
-<div id="fy2711"></div>
-<h3>ORNL R&D efforts on HPC programming: LLMs and high-productivity languages</h3>
+<h3 id="fy2711" tabindex="-1">ORNL R&amp;D efforts on HPC programming: LLMs and high-productivity languages</h3>
 Speaker: Philip Fackler and William F. Godoy<br>
 Oak Ridge National Laboratory<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 The rising complexity of exascale and future heterogeneous systems has posed interesting challenges for the programmability, productivity, and performance portability of high-performance computing (HPC) and AI applications. In this talk we present our US Department of Energy (DOE) funded research and development efforts at Oak Ridge National Laboratory.
-First, we cover our research efforts on leveraging large language models (LLMs) for HPC code generation followed by our recent ChatBLAS, ChatHPC, ChatMPI, Fortran to C++ translation, multimodality, and agentic AI exploration efforts towards the US DOE Genesis mission. We then showcase our research efforts exploring Mojo, as the latest attempt to speed-up the Python ecosystem, and Julia for HPC. Second, we present our development efforts in JACC.jl, Julia for ACCelerators, our flagship performance portable framework that recently achieved a stable v1.0 release and core status in DOEâ€™s programming systems portfolio. We describe JACC.jlâ€™s software capabilities and its high-level, mathematical, and interactive programming model including shared memory, multi-GPU capabilities that leverages Julia and the JuliaGPU vendor backends (CUDA.jl, AMDGPU.jl, oneAPI.jl, and Metal.jl) ecosystem.  We showcase user engagements around the world (e.g., CERFACS, University of Tokyo, RIKEN, New Jersey Institute of Technology, etc.) and how JACC.jl contributes to the adoption of Julia for HPC.
+First, we cover our research efforts on leveraging large language models (LLMs) for HPC code generation followed by our recent ChatBLAS, ChatHPC, ChatMPI, Fortran to C++ translation, multimodality, and agentic AI exploration efforts towards the US DOE Genesis mission. We then showcase our research efforts exploring Mojo, as the latest attempt to speed-up the Python ecosystem, and Julia for HPC. Second, we present our development efforts in JACC.jl, Julia for ACCelerators, our flagship performance portable framework that recently achieved a stable v1.0 release and core status in DOE’s programming systems portfolio. We describe JACC.jl’s software capabilities and its high-level, mathematical, and interactive programming model including shared memory, multi-GPU capabilities that leverages Julia and the JuliaGPU vendor backends (CUDA.jl, AMDGPU.jl, oneAPI.jl, and Metal.jl) ecosystem.  We showcase user engagements around the world (e.g., CERFACS, University of Tokyo, RIKEN, New Jersey Institute of Technology, etc.) and how JACC.jl contributes to the adoption of Julia for HPC.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-<b>Philip Fackler</b> has been a Research Software Engineer in the Computer Science and Mathematics Division at Oak Ridge National Laboratory (ORNL) since 2019. He received his PhD in computational mechanics His work has generally been related to porting existing high-performance computing (HPC) codes to make use of GPUs with an emphasis on performance-portability and sustainability. This has been primarily done with C++ using Kokkos and with Julia using JACC.jl with application areas in nuclear fusion/fission, additive manufacturing, and neutron data interpretation. He is the lead developer of JACC.jl and has given several tutorials both at ORNL and at various conferences introducing the Julia language and packages for use in high-performance computing applications. He is a member of IEEE and has received best paper awards at SC for his work on JACC connecting ORNL neutron and computational facilities (SCâ€™24 XLOOP) and exploring the Mojo language for HPC (SCâ€™25 WACCPD).
+<b>Philip Fackler</b> has been a Research Software Engineer in the Computer Science and Mathematics Division at Oak Ridge National Laboratory (ORNL) since 2019. He received his PhD in computational mechanics His work has generally been related to porting existing high-performance computing (HPC) codes to make use of GPUs with an emphasis on performance-portability and sustainability. This has been primarily done with C++ using Kokkos and with Julia using JACC.jl with application areas in nuclear fusion/fission, additive manufacturing, and neutron data interpretation. He is the lead developer of JACC.jl and has given several tutorials both at ORNL and at various conferences introducing the Julia language and packages for use in high-performance computing applications. He is a member of IEEE and has received best paper awards at SC for his work on JACC connecting ORNL neutron and computational facilities (SC’24 XLOOP) and exploring the Mojo language for HPC (SC’25 WACCPD).
 </p>
 <p>
 <b>William F. Godoy</b> is a Senior Computer Scientist at Oak Ridge National Laboratory. His research interests are in high-performance computing (HPC), programming systems, workflows, AI for HPC, and energy efficiency. He has worked extensively in DOE projects focusing on HPC libraries (e.g. ADIOS2), applications (QMCPACK),  and programming systems. His recent work introduced the use of LLMs for HPC and the application of high-productivity languages for performance portable HPC: Julia and Mojo. He received his PhD in mechanical engineering from the State University of New York at Buffalo in 2009. He is a senior member of IEEE, a member of ACM serving in HPC venues and has co-authored more than 60 publications in the field of computer and computational science including several technical awards.
 </p>
 
-<div id="fy2712"></div>
-<h3>Ensemble Based Consistency Testing: Keeping Chaotic Codes on Course</h3>
+<h3 id="fy2712" tabindex="-1">Ensemble Based Consistency Testing: Keeping Chaotic Codes on Course</h3>
 Speaker: Teo Price-Broncucia<br>
 NSF National Center for Atmospheric Research (NSF-NCAR)
 <br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Here we present an introduction to the Ultra Fast - Ensemble Consistency Testing (UF-ECT) framework that has been used at NSF-NCAR for the past decade to help scientists and software engineers work efficiently and confidently when chaotic codes and changing compute environments preclude bit-for-bit equivalency. We present a number of case studies demonstrating how the UF-ECT framework has been used in practice to detect unintended sensitivities in physics parameterizations, bugs in compiler implementations, and errors in GPU ports.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Teo Price-Broncucia is an Advanced Study Program Postdoctoral Fellow at the NSF National Center for Atmospheric Research (NSF-NCAR). His research focuses on calibration and verification for expensive chaotic computer models. He received his Ph.D. in Computer Science from the University of Colorado, Boulder and his B.A. in Physics from Colorado College where he was a Boettcher Scholar.
 </p>
 
 
-<div id="fy2713"></div>
-<h3>Parallel Performance Evaluation Using the TAU Performance System</h3>
+<h3 id="fy2713" tabindex="-1">Parallel Performance Evaluation Using the TAU Performance System</h3>
 Speaker: Sameer Shende<br>
 University of Oregon and ParaTools, Inc.<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 This talk introduces the TAU Performance System for scalable profiling, tracing, and performance analysis of modern HPC and AI-enabled applications. TAU supports emerging programming models and heterogeneous architectures, including low-overhead instrumentation for Python-based AI frameworks (e.g., PyTorch and TensorFlow), native Julia instrumentation, and integrated CPU/GPU sampling across NVIDIA, AMD, and Intel platforms. Recent enhancements include access to GPU hardware performance counters and support for Perfetto for unified, web-based trace visualization.
-Participants will learn to collect and analyze profile and trace data using automated instrumentation, sampling, and hardware counters. The corresponding workshop demonstrates how to identify performance bottlenecks across CPUs and accelerators, analyze memory and I/O behavior, and correlate performance across software layers. Attendees will explore scalable tracing with Perfetto and OTF2, interactive visualization, and TAUâ€™s performance data management tools.
+Participants will learn to collect and analyze profile and trace data using automated instrumentation, sampling, and hardware counters. The corresponding workshop demonstrates how to identify performance bottlenecks across CPUs and accelerators, analyze memory and I/O behavior, and correlate performance across software layers. Attendees will explore scalable tracing with Perfetto and OTF2, interactive visualization, and TAU’s performance data management tools.
 Hands-on sessions use E4S deployed on cloud platforms, providing a curated HPC and AI software stack including TAU, Kokkos, PETSc, Trilinos, and leading AI frameworks. This overview will transition into a full-day tutorial covering practical, reproducible workflows for performance analysis across HPC and cloud environments.
 By the end of the workshop, participants will be prepared to apply TAU to complex applications using advanced instrumentation, sampling, and cross-platform analysis techniques on next-generation heterogeneous systems.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-Sameer Shende serves as a Research Professor and the Director of the Performance Research Laboratory at the University of Oregon and the President and Director of ParaTools, Inc. He serves as the Technical Lead of the Extreme-scale Scientific Software Stack (E4S), ParaTools Pro for E4S(TM), TAU Performance System, and Program Database Toolkit (PDT) projects. His research interests include scientific software stacks, performance instrumentation, compiler optimizations, measurement, and analysis tools for HPC. He has served as the Technical Papers Vice Chair for SC22, General Co-Chair for ICPPâ€™21 and EuroParâ€™24, Track Chair for Programming Environments and System Software for ISCâ€™25, and the Program Co-Chair for ICPPâ€™25 and Supercomputing India 2025. He received his B.Tech. in Electrical Engineering from IIT Bombay in 1991, and his M.S. and Ph.D. in Computer and Information Science from the University of Oregon in 1996 and 2001 respectively.
+Sameer Shende serves as a Research Professor and the Director of the Performance Research Laboratory at the University of Oregon and the President and Director of ParaTools, Inc. He serves as the Technical Lead of the Extreme-scale Scientific Software Stack (E4S), ParaTools Pro for E4S(TM), TAU Performance System, and Program Database Toolkit (PDT) projects. His research interests include scientific software stacks, performance instrumentation, compiler optimizations, measurement, and analysis tools for HPC. He has served as the Technical Papers Vice Chair for SC22, General Co-Chair for ICPP’21 and EuroPar’24, Track Chair for Programming Environments and System Software for ISC’25, and the Program Co-Chair for ICPP’25 and Supercomputing India 2025. He received his B.Tech. in Electrical Engineering from IIT Bombay in 1991, and his M.S. and Ph.D. in Computer and Information Science from the University of Oregon in 1996 and 2001 respectively.
 </p>
-Links:
+<h4>Links</h4>
 <ul>
     <li><a href="https://tau.uoregon.edu">Tau</a> </li>
     <li><a href="https://e4s.io">E4S: HPC-AI Software Ecosystem for Science </a></li>
@@ -549,85 +640,80 @@ Links:
 </ul>
 
 
-<div id="fy2714"></div>
-<h3>Evolving Classical PDE Solvers: A Grammar-based Approach Using Evolutionary Algorithms</h3>
+<h3 id="fy2714" tabindex="-1">Evolving Classical PDE Solvers: A Grammar-based Approach Using Evolutionary Algorithms</h3>
 Speaker: Dinesh Parthasarathy<br>
-Friedrich-Alexander-UniversitÃ¤t Erlangen-NÃ¼rnberg<br><br>
+Friedrich-Alexander-Universität Erlangen-Nürnberg<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
-We present a grammar-based approach that uses context-free grammars to infuse domain knowledge and structure into the design of classical PDE solvers. A population of candidate solver programs is evolved using evolutionary algorithms, with the search constrained by the grammar rules.  In contrast to machine learning approaches that rely on differentiable codes to learn optimal solver components, we adopt a complementary strategy: employing evolutionary algorithms to construct efficient solvers from proven algorithmic building blocks. This has a key practical advantageâ€”enabling easy and fairly non-intrusive integration with existing solver frameworks such as hypre. Numerical experiments on scientific applications using hypre demonstrate the potential of our approach for automated solver design.
+We present a grammar-based approach that uses context-free grammars to infuse domain knowledge and structure into the design of classical PDE solvers. A population of candidate solver programs is evolved using evolutionary algorithms, with the search constrained by the grammar rules.  In contrast to machine learning approaches that rely on differentiable codes to learn optimal solver components, we adopt a complementary strategy: employing evolutionary algorithms to construct efficient solvers from proven algorithmic building blocks. This has a key practical advantage—enabling easy and fairly non-intrusive integration with existing solver frameworks such as hypre. Numerical experiments on scientific applications using hypre demonstrate the potential of our approach for automated solver design.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-Dinesh Parthasarathy is a PhD candidate in Computer Science at Friedrich-Alexander University Erlangen-NÃ¼rnberg (FAU). His research focuses on using artificial intelligence (AI), particularly evolutionary algorithms, to design efficient numerical methods and multigrid solvers for large-scale scientific simulations. He previously interned with the hypre team at Lawrence Livermore National Laboratory and continues to collaborate on AI-driven approaches for solver design.
+Dinesh Parthasarathy is a PhD candidate in Computer Science at Friedrich-Alexander University Erlangen-Nürnberg (FAU). His research focuses on using artificial intelligence (AI), particularly evolutionary algorithms, to design efficient numerical methods and multigrid solvers for large-scale scientific simulations. He previously interned with the hypre team at Lawrence Livermore National Laboratory and continues to collaborate on AI-driven approaches for solver design.
 </p>
 
-<div id="fy2715"></div>
-<h3>Enzyme: High-Performance, Cross-Language, and Parallel Automatic Differentiation</h3>
+<h3 id="fy2715" tabindex="-1">Enzyme: High-Performance, Cross-Language, and Parallel Automatic Differentiation</h3>
 Speaker: William Moses<br>
 University of Illinois<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Automatic differentiation (AD) is key to training neural networks, Bayesian inference, and scientific computing. Applying these techniques requires rewriting code in a specific machine learning framework or manually providing derivatives. This talk presents Enzyme, a high-performance automatic differentiation compiler plugin for the LLVM and MLIR compiler frameworks. Enzyme differentiates programs in any language whose compiler targets LLVM/MLIR, including C/C++, Fortran, Julia, Rust, Swift, JaX, etc., thereby providing native AD capabilities in these languages with state-of-the-art performance. Unlike traditional tools, Enzyme performs AD on optimized IR. On a combined machine-learning and scientific computing benchmark suite, AD on optimized IR achieves a geometric mean speedup of 4.2x over AD on IR before optimization. This talk will also include work that makes Enzyme the first fully automatic reverse-mode AD tool to generate gradients of existing GPU kernels as well as the benefits of operating within high-level structured representations, like MLIR.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 William Moses is an Assistant Professor at the University of Illinois in the Computer Science and Electrical and Computer Engineering departments. He received a Ph.D. in Computer Science from MIT, where he also received his M.Eng in electrical engineering and computer science (EECS) and B.S. in EECS and physics. William's research involves creating compilers and program representations that enable performance and use-case portability, thus enabling non-experts to leverage the latest in high-performance computing and ML. He is known as the lead developer of Enzyme, a tool for LLVM/MLIR capable of differentiating code in a variety of languages; Polygeist, a polyhedral compiler and C++ frontend for MLIR; and Reactant, a tool for enabling existing scientific code to run on distributed ML accelerators. He has also worked on the Tensor Comprehensions framework for synthesizing high-performance GPU kernels of ML code, the Tapir compiler for parallel programs, and compilers that use machine learning to better optimize. He is a recipient of the SIAM SC Early Career Prize, the SIGHPC Doctoral Dissertation Award, a DOE Computational Science Graduate Fellowship and the Karl Taylor Compton Prize, MIT's highest student award.
 </p>
-Links:
+<h4>Links</h4>
 <ul>
     <li><a href="https://c.wsmoses.com/presentations/enzyme-lanl.pdf">Slides</a> </li>
 </ul>
 
 
 
-<div id="fy2716"></div>
-<h3>Building Scientific Software in Rust: A Case Study in Multiscale Geometry and Transport</h3>
+<h3 id="fy2716" tabindex="-1">Building Scientific Software in Rust: A Case Study in Multiscale Geometry and Transport</h3>
 Speaker: Joshua Lewis<br>
 Los Alamos National Laboratory<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
-High-performance scientific codes are often asked to do much more than execute numerical kernels efficiently. They must manage complex simulation state, operate within tight memory constraints, adapt as scientific questions evolve, and ultimately scale to modern parallel hardware. In this talk, I will discuss why Rust is an especially promising language for this setting. Its ownership model and borrow checker are central advantages, but Rustâ€™s value in HPC also comes from how it promotes explicit control over memory and data movement, strong compile-time correctness, and software architectures that support both performance and safe parallelism. These features are especially relevant for the kinds of long-lived scientific codes common in laboratory computing environments, where research software must often grow into robust, scalable infrastructure.
+High-performance scientific codes are often asked to do much more than execute numerical kernels efficiently. They must manage complex simulation state, operate within tight memory constraints, adapt as scientific questions evolve, and ultimately scale to modern parallel hardware. In this talk, I will discuss why Rust is an especially promising language for this setting. Its ownership model and borrow checker are central advantages, but Rust’s value in HPC also comes from how it promotes explicit control over memory and data movement, strong compile-time correctness, and software architectures that support both performance and safe parallelism. These features are especially relevant for the kinds of long-lived scientific codes common in laboratory computing environments, where research software must often grow into robust, scalable infrastructure.
 To ground these ideas, I will present a case study drawn from a scientific codebase for multiscale geometry generation and transport simulation. The code involves stochastic placement algorithms, custom quadtree-based spatial data structures, event-driven ray tracing, and statistical analysis pipelines, all of which place competing demands on performance, correctness, and extensibility. Using this example, I will highlight how Rust can help scientific software evolve from an exploratory prototype into more robust computational infrastructure. The talk is intended for researchers and developers interested in how programming language design, software architecture, and applied scientific computing intersect in practice.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Joshua Lewis is a postdoctoral researcher at Los Alamos National Laboratory whose work spans computational condensed matter physics, frustrated magnetic systems, and scientific software for high-performance computing. He earned his Ph.D. in Applied Physics from the Colorado School of Mines in 2025, where his research focused on the role of fractional derivatives in physical theory, with an emphasis on quantum models, fractional diffusion, and numerical methods for matrix product state simulations. His broader research is centered on Monte Carlo approaches to many-body systems, spin-ice and other frustrated magnetic materials, and multiscale transport, with a particular interest in tackling challenging numerical problems in computational physics. He is especially interested in optimization and in developing high-performance simulation tools that combine computational efficiency with strong physical insight.
 </p>
 
-<div id="fy2717"></div>
-<h3>An evaluation of risks associated with abandoning Fortran</h3>
+<h3 id="fy2717" tabindex="-1">An evaluation of risks associated with abandoning Fortran</h3>
 Speaker: Damian Rouson<br>
 Berkeley Lab and San Diego State University<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Programming languages are diverging. Each is decades ahead of or behind the others, depending on the features of interest.  This talk will present modern Fortran's leading role in language support for distributed-memory parallel programming, modular programming, array programming, GPU programming, and type-safe generic programming.  The talk will demonstrate how the Berkeley Lab Fortran team leverages each of these capabilities to benefit science in open-source software we develop, including (1) automatic parallelization of batch inference and training in the Fiats deep learning library, (2) mimetic software abstractions for vector calculus and the prospects for accessible formal verification in Formal, and (3) natural-language idioms in Julienne unit tests.  Building on the natural-language theme, the talk will frame  programming languages as human languages in addition to being computer languages.  We will cover a historical example of another beneficial coded language form that was suppressed.  We will conclude by highlighting the history of attempts to stamp out human languages by edict.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Damian Rouson is a Senior Scientist and the Group Lead for the Computer Languages and Systems Software (CLaSS) Group at Berkeley Lab and an Adjunct Faculty at San Diego State University.  He researches programming paradigms, patterns, and languages for high-performance computing.  He leads the development of several open-source software packages, including the Julienne correctness-checking framework, the Caffeine parallel runtime library, the Fiats deep learning library, and the Formal embedded domain-specific language (DSL). He founded Archaeologic Inc. and Sourcery Institute. He holds a B.S. from Howard University and a M.S. and Ph.D. from Stanford University, all in mechanical engineering. He is a licensed Professional Engineer (P.E.) in the State of California. He co-authored the textbook Scientific Software Design: The Object-Oriented Way (Cambridge University Press, 2011) and has taught related short courses and graduate course in approximately 40 venues.  He has held faculty, staff, and visiting positions at the City University of New York; the University of Maryland, College Park; the University of Cyprus; the University of Bergen; and Stanford University.  He has held research and technical management positions at the U.S. Naval Research Laboratory and Sandia National Laboratories.
 </p>
-Links:
+<h4>Links</h4>
 <ul>
     <li><a href="https://go.lbl.gov/fiats">Fiats</a> </li>
     <li><a href="https://go.lbl.gov/formal">Formal</a></li>
     <li><a href="https://go.lbl.gov/julienne">Julienne</a></li>
 </ul>
 
-<div id="fy2718"></div>
-<h3>Kessel: Continuous Integration and Developer Workflows</h3>
+<h3 id="fy2718" tabindex="-1">Kessel: Continuous Integration and Developer Workflows</h3>
 Speaker: Richard Berger<br>
 Los Alamos National Laboratory<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Kessel is a tool to create and drive continuous integration (CI) and developer workflows through a unified interface across multiple code projects and environments.
 
@@ -640,117 +726,110 @@ A key goal of Kessel is to bridge the gap between CI pipeline definitions and de
 As part of its adoption, Kessel-based deployment workflows have established a baseline dependency configuration for commonly used HPC systems, enabling a shared foundation for software deployment and development across multiple code teams. Approved as LA-UR-26-20804.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Richard is a research software engineer in the Applied Computer Science Group (CAI-1) at Los Alamos National Laboratory (LANL) with a background in Mechatronics, high-performance computing, and software engineering. He is currently contributing to the core development of LAMMPS, FleCSI and working on DevOps for multiple other LANL projects.
 </p>
 
 
 
-<div id="fy2719"></div>
-<h3>Safe and Resource Efficient Neural Networks through architectural collapse</h3>
+<h3 id="fy2719" tabindex="-1">Safe and Resource Efficient Neural Networks through architectural collapse</h3>
 Speaker: Jamil Gafur<br>
 University of Iowa<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Modern Convolutional Neural Networks (CNNs) often suffer from depth redundancy, where sequential layers increase inference latency and memory usage without significantly improving accuracy. To address this, we introduce Layer-by-Layer Structural Reduction (LBL), a post-hoc methodology that identifies contiguous layer blocks and collapses them into a single, lightweight surrogate module. By targeting depth redundancy directly, LBL aims to reduce sequential operations and increase hardware efficiency. While LBL streamlines networks for deployment, ensuring these resource-efficient models remain secure is critical. We are working on evaluating model resilience using Adversarial Particle Swarm Optimization (APSO), a data-agnostic, black-box framework that generates transferable adversarial examples to probe cross-model vulnerabilities. This ongoing work investigates how combining structural collapse with reproducible robustness metrics and Explainable AI (XAI) diagnostics can establish a unified paradigm for building and validating deep learning systems that are both computationally efficient and resilient to inference-time poisoning.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Jamil Gafur is a Software Engineer and Ph.D. candidate in Computer Science at the University of Iowa, specializing in the development of resource-efficient, interpretable, and robust machine learning systems. With over five years of experience, he has engineered scalable data pipelines and reproducible deep learning frameworks at premier institutions, including the National Renewable Energy Laboratory (NREL)/National Lab of the Rockies (NRL), Cornell University, and Los Alamos National Laboratory (LANL). His technical expertise spans Python, SQL, and high-performance computing, with a significant focus on model pruning, adversarial robustness, and translating complex technical data into actionable strategic insights. Jamil holds an M.S. in Computer Science and a B.S. with a minor in Business Administration, and he has a proven track record of modernizing legacy computational workflows to achieve significant performance gains.
 </p>
 
 
-<div id="fy2720"></div>
-<h3>LFortran - Modern interactive LLVM-based Fortran compiler</h3>
-Speaker: OndÅ™ej ÄŒertÃ­k<br>
+<h3 id="fy2720" tabindex="-1">LFortran - Modern interactive LLVM-based Fortran compiler</h3>
+Speaker: Ondřej Čertík<br>
 Microsoft<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
-LFortran is a modern, open-source interactive Fortran compiler designed for high-performance computing and scientific applications. Built on top of the LLVM infrastructure, it offers a robust, modular architecture that facilitates advanced code analysis, optimization, and portability. While LLVM remains the primary backend in an advanced alpha stage, LFortran also supports experimental backends such as C, C++/Kokkos, Julia, MLIR, and WebAssembly. Recent developments have significantly enhanced LFortranâ€™s capabilities, including successful compilation of complex scientific projects like PRIMA, POT3D, and SNAP, as well as support for OpenMP pragmas, the concurrent keyword, and compile-time evaluation of arrays. The compiler is also making strides in GPU offloading for NVIDIA architectures and web-based execution. LFortran provides partial support for Fortran Package Manager (FPM) and the growing Fortran standard library (stdlib). Its object-oriented features are being actively developed to better support modern Fortran codebases. Its ongoing improvements aim to make it a full-featured, production-ready compiler that meets the demands of modern Fortran developers while integrating seamlessly into heterogeneous computing environments.
+LFortran is a modern, open-source interactive Fortran compiler designed for high-performance computing and scientific applications. Built on top of the LLVM infrastructure, it offers a robust, modular architecture that facilitates advanced code analysis, optimization, and portability. While LLVM remains the primary backend in an advanced alpha stage, LFortran also supports experimental backends such as C, C++/Kokkos, Julia, MLIR, and WebAssembly. Recent developments have significantly enhanced LFortran’s capabilities, including successful compilation of complex scientific projects like PRIMA, POT3D, and SNAP, as well as support for OpenMP pragmas, the concurrent keyword, and compile-time evaluation of arrays. The compiler is also making strides in GPU offloading for NVIDIA architectures and web-based execution. LFortran provides partial support for Fortran Package Manager (FPM) and the growing Fortran standard library (stdlib). Its object-oriented features are being actively developed to better support modern Fortran codebases. Its ongoing improvements aim to make it a full-featured, production-ready compiler that meets the demands of modern Fortran developers while integrating seamlessly into heterogeneous computing environments.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-OndÅ™ej ÄŒertÃ­k is a software engineer and scientist with a background in high-performance computational physics, numerical methods, software development, and compilers. He works on compiler engineering for AI accelerators at Microsoft. OndÅ™ej holds a Ph.D. in Chemical Physics from the University of Nevada, Reno. He worked for 9 years at Los Alamos National Laboratory, and previously at Lawrence Livermore National Laboratory and the University of Nevada, Reno. His research expertise includes electronic structure calculations, molecular dynamics, and finite element methods. In addition to his research work, OndÅ™ej is the founder of several popular open-source projects, including SymPy, SymEngine, LFortran, and LPython. He has authored numerous papers and presentations on computational physics, numerical methods, and software development.
+Ondřej Čertík is a software engineer and scientist with a background in high-performance computational physics, numerical methods, software development, and compilers. He works on compiler engineering for AI accelerators at Microsoft. Ondřej holds a Ph.D. in Chemical Physics from the University of Nevada, Reno. He worked for 9 years at Los Alamos National Laboratory, and previously at Lawrence Livermore National Laboratory and the University of Nevada, Reno. His research expertise includes electronic structure calculations, molecular dynamics, and finite element methods. In addition to his research work, Ondřej is the founder of several popular open-source projects, including SymPy, SymEngine, LFortran, and LPython. He has authored numerous papers and presentations on computational physics, numerical methods, and software development.
 </p>
 
-<div id="fy2721"></div>
-<h3>From Kernels to Standards: How Kokkos and Modern C++ Future-Proof Critical Simulation Codes</h3>
-Speaker: Damien Lebrun-GrandiÃ©<br>
+<h3 id="fy2721" tabindex="-1">From Kernels to Standards: How Kokkos and Modern C++ Future-Proof Critical Simulation Codes</h3>
+Speaker: Damien Lebrun-Grandié<br>
 Oak Ridge National Laboratory<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
-Modern high-performance computing (HPC) demands architectural agility to effectively leverage heterogeneous exascale systems. This seminar explores how the Kokkos performance portability ecosystem enables critical scientific simulation codes to achieve optimal performance across diverse hardware without sacrificing code longevity or maintainability. We will detail how Kokkos mediates the gap between low-level performance (kernels) and high-level productivity. Furthermore, we will discuss the crucial role of international C++ standardizationâ€”informed directly by HPC needsâ€”in securing the long-term viability and portability of C++ as the foundational language for national security and exascale science.
+Modern high-performance computing (HPC) demands architectural agility to effectively leverage heterogeneous exascale systems. This seminar explores how the Kokkos performance portability ecosystem enables critical scientific simulation codes to achieve optimal performance across diverse hardware without sacrificing code longevity or maintainability. We will detail how Kokkos mediates the gap between low-level performance (kernels) and high-level productivity. Furthermore, we will discuss the crucial role of international C++ standardization—informed directly by HPC needs—in securing the long-term viability and portability of C++ as the foundational language for national security and exascale science.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-Damien Lebrun-GrandiÃ© is a Senior Computational Scientist at ORNL, focusing on algorithms and enabling technologies for large-scale engineering and scientific problems on the world's fastest supercomputers. He co-leads the Kokkos C++ project for performance portability and is an ORNL representative to the C++ Standards Committee, where he contributed features like std::mdspan and std::linalg. He is also a founding member of the High Performance Software Foundation.
+Damien Lebrun-Grandié is a Senior Computational Scientist at ORNL, focusing on algorithms and enabling technologies for large-scale engineering and scientific problems on the world's fastest supercomputers. He co-leads the Kokkos C++ project for performance portability and is an ORNL representative to the C++ Standards Committee, where he contributed features like std::mdspan and std::linalg. He is also a founding member of the High Performance Software Foundation.
 </p>
 
-<div id="fy2722"></div>
-<h3>Randomized Methods for Corrupted Tensor Systems</h3>
+<h3 id="fy2722" tabindex="-1">Randomized Methods for Corrupted Tensor Systems</h3>
 Speaker: Alejandra Castillo<br>
 Pomona College<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Recovering tensor-valued signals from corrupted measurements is a central problem in various applications such as hyperspectral image reconstruction and medical imaging. This talk considers tensor linear systems of the form AX = B, that contain observations potentially affected by sparse, large-magnitude corruptions.  A quantile-based randomized Kaczmarz algorithm, called quantile tensor randomized Kaczmarz (QTRK), is discussed to address this challenge. By integrating quantile statistics into the iterative update process, QTRK improves robustness against adversarial errors. A variant selectively omits unreliable measurements to enhance stability further.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Alejandra Castillo teaches mathematics and statistics at Pomona College. As a statistician, she is interested in applying statistical methodology to questions in biology and public health. Through more recent work, she has collaborated with applied mathematicians to extend linear-algebraic techniques to develop machine learning tools that promote transparency and efficiency in large-scale problems. She introduces students to computing and data science, and also supports efforts to broaden participation in the mathematical sciences.
 </p>
 
-<div id="fy2723"></div>
-<h3>From Anaconda to Pixi: Modernizing Python Package Management for Neutron Science at ORNL</h3>
+<h3 id="fy2723" tabindex="-1">From Anaconda to Pixi: Modernizing Python Package Management for Neutron Science at ORNL</h3>
 Speaker: Chen Zhang<br>
 Oak Ridge National Laboratory<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 The neutron science community at Oak Ridge National Laboratory faces unique challenges in managing complex software dependencies across diverse computing environments, from development workstations to production deployment at the Spallation Neutron Source (SNS) and High Flux Isotope Reactor (HFIR). Following Anaconda's licensing changes and mounting technical limitations, we undertook a comprehensive evaluation of modern Python package management solutions to support our neutron data reduction infrastructure.
 This talk presents our journey from Anaconda to Pixi, detailing the selection criteria, evaluation process, and practical implementation across our software ecosystem. I will discuss how we assessed alternatives including uv, Poetry, PDM, and micromamba, and why Pixi ultimately met our requirements for reproducibility, performance, and cross-platform compatibility. Through concrete examples from our neutron data projects, I will demonstrate Pixi-based workflows for both pure Python and mixed Python/C++ projects, including our open-source template repository for standardized project setup.
 The presentation will cover the complete software lifecycle: from development and testing to packaging for PyPI and conda-forge, and finally to production deployment supporting real-time neutron data reduction at ORNL's flagship facilities. I will share lessons learned, best practices, and practical strategies that may benefit other scientific computing teams facing similar infrastructure modernization challenges.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Dr. Chen Zhang is a Computational Scientist in the Computer Science and Mathematics Division at Oak Ridge National Laboratory (ORNL), where he specializes in scientific software development, machine learning applications, and high-performance computing for neutron science. He received his B.S. in Materials Science and Engineering from Shanghai Jiao Tong University and his Ph.D. in Materials Science and Engineering from Michigan State University.
 Prior to joining ORNL, Dr. Zhang held postdoctoral positions at Carnegie Mellon University and Colorado School of Mines, where he developed automated data reduction software and real-time control systems for high-throughput X-ray diffraction experiments at Argonne National Laboratory's Advanced Photon Source.
 At ORNL, Dr. Zhang contributes to software infrastructure development for neutron scattering facilities at the Spallation Neutron Source (SNS) and High Flux Isotope Reactor (HFIR), with a focus on neutron imaging applications. His work includes developing BM3DORNL, an open-source library for artifact removal in neutron tomography; creating FuGNN (Fusion Graph Neural Network) for applications in neutron reflectometry and power-grid analysis; leading the refactoring effort for PLEIADES v2.0, a neutron resonance data reduction software originally developed at Los Alamos National Laboratory; and contributing to iBeatles, the data reduction engine for neutron Bragg edge strain mapping at ORNL's VENUS beamline, where he addressed packaging challenges and implemented command-line batch processing capabilities. He is an active contributor to open-source scientific computing projects and serves as a reviewer for several journals in computational materials science and neutron scattering.
 </p>
 
-<div id="fy2724"></div>
-<h3>PPT-GPU 2.0: An Accurate, Scalable, Hybrid Performance Model for Modern GPGPUs</h3>
+<h3 id="fy2724" tabindex="-1">PPT-GPU 2.0: An Accurate, Scalable, Hybrid Performance Model for Modern GPGPUs</h3>
 Speaker: Abdel-Hameed (Hameed) A. Badawy<br>
 New Mexico State University<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 As modern GPU architectures advance to meet the demands of large-scale simulations and AI, accurate and scalable modeling tools are indispensable for performance optimization and design space exploration. This talk introduces PPT-GPU 2.0, a hybrid performance prediction toolkit designed to model NVIDIA GPUs.
-We will detail our enhancements to PPT-GPU, including advanced modeling for the Ampere architecture's redesigned shared memory, local memory, and tensor cores. Additionally, we introduce a new â€œbalance modelâ€ to achieve more precise occupancy modeling, complementing metrics such as kernel execution time and active cycles. Furthermore, we integrated a roofline analysis framework directly within PPT-GPU 2.0. This visualization tool enables rapid identification of computational and memory bottlenecks, adding versatility to PPT-GPU 2.0 for scalable hardware-software co-design.
+We will detail our enhancements to PPT-GPU, including advanced modeling for the Ampere architecture's redesigned shared memory, local memory, and tensor cores. Additionally, we introduce a new “balance model” to achieve more precise occupancy modeling, complementing metrics such as kernel execution time and active cycles. Furthermore, we integrated a roofline analysis framework directly within PPT-GPU 2.0. This visualization tool enables rapid identification of computational and memory bottlenecks, adding versatility to PPT-GPU 2.0 for scalable hardware-software co-design.
 Our evaluations on A100 GPUs are validated against NVIDIA Nsight Compute (Ground Truth) and AccelSim (a cycle-accurate simulator), showing average errors of 16.4% for active cycles and 19.2% for kernel execution time.
 Towards the end, time permitting, we will give a glimpse into our hardware security work, which includes using various ML techniques to insert and detect hardware trojans in digital systems.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-Prof. Abdel-Hameed (Hameed) A. Badawy (Senior Member, IEEE) received a B.Sc. degree (Hons.) in Electronics Engineering from Mansoura University, Egypt, focusing on computers and control systems, and an M.Sc. & Ph.D. degrees in computer engineering from the University of Maryland, College Park. He is a tenured Associate Professor with the Klipsch School of Electrical and Computer Engineering, New Mexico State University, Las Cruces, NM, USA. He is the chair of the Computer Engineering Area. Also, he is an affiliated faculty with the Los Alamos and Lawrence Berkeley National Laboratories. He has been a Visiting Research Scientist with the New Mexico Consortium. He was a Lead Research Scientist with the High-Performance Computing Laboratory at the George Washington University. His research interests include performance modeling, prediction, monitoring, and evaluation; high-performance computer architectures; hardware security; machine learning applications to computational problems; and Quantum Computing.
+Prof. Abdel-Hameed (Hameed) A. Badawy (Senior Member, IEEE) received a B.Sc. degree (Hons.) in Electronics Engineering from Mansoura University, Egypt, focusing on computers and control systems, and an M.Sc. &amp; Ph.D. degrees in computer engineering from the University of Maryland, College Park. He is a tenured Associate Professor with the Klipsch School of Electrical and Computer Engineering, New Mexico State University, Las Cruces, NM, USA. He is the chair of the Computer Engineering Area. Also, he is an affiliated faculty with the Los Alamos and Lawrence Berkeley National Laboratories. He has been a Visiting Research Scientist with the New Mexico Consortium. He was a Lead Research Scientist with the High-Performance Computing Laboratory at the George Washington University. His research interests include performance modeling, prediction, monitoring, and evaluation; high-performance computer architectures; hardware security; machine learning applications to computational problems; and Quantum Computing.
 </p>
 
-<div id="fy2725"></div>
-<h3>What We Need to Model Planetary Interiors: The Role of Research Software in Computational Geodynamics</h3>
+<h3 id="fy2725" tabindex="-1">What We Need to Model Planetary Interiors: The Role of Research Software in Computational Geodynamics</h3>
 Speaker: Rene Gassmoeller<br>
 GEOMAR Helmholtz Centre for Ocean Research Kiel, Germany<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Geodynamics - understanding the internal dynamics of the Earth and
 other planets - depends heavily on the use of numerical algorithms and
@@ -775,7 +854,7 @@ tectonic plates, and the influence of mineral phase transitions on
 Earth's long-term evolution.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Rene Gassmoeller is a staff scientist at the GEOMAR Helmholtz
 Centre for Ocean Research Kiel, and previously was the technical lead
@@ -791,27 +870,25 @@ processes in the deep Earth and developing the software we need to
 understand them.
 </p>
 
-<div id="fy2726"></div>
-<h3>To Interoperability And Beyond: Interoperable Types Through the Promises of C and C++ and ABI Abuse</h3>
+<h3 id="fy2726" tabindex="-1">To Interoperability And Beyond: Interoperable Types Through the Promises of C and C++ and ABI Abuse</h3>
 Speaker: CJ Solomon<br>
 Los Alamos National Laboratory<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
-Performance portability APIs, e.g., Kokkos, RAJA, etc., are typically written in C++ but many high-performance computing (HPC) codes are written in Fortran.  This presents a challenge for the Fortran simulation codes in being able to shuffle data representations from Fortran to C++, particularly when those data make heavy use of Fortran derived types.  This talk will present a solution developed by LANLâ€™s Eulerian Applications Project (EAP) so that Fortran derived types can be easily migrated from Fortran to C++ and data migrated to the requisite memory spaces to be operated upon by a C++ performance portability library.  The approach builds upon the Fortran 2018 standard â€œISO_Fortran_binding.hâ€ header and specialized processing tools to auto generate interoperable types that, in C++, have introspective capability.  The introspective capability of the resulting types allow for transformations of internal data via user defined transformation functions, e.g., to convert Fortran assumed shape arrays into Kokkos::Views
+Performance portability APIs, e.g., Kokkos, RAJA, etc., are typically written in C++ but many high-performance computing (HPC) codes are written in Fortran.  This presents a challenge for the Fortran simulation codes in being able to shuffle data representations from Fortran to C++, particularly when those data make heavy use of Fortran derived types.  This talk will present a solution developed by LANL’s Eulerian Applications Project (EAP) so that Fortran derived types can be easily migrated from Fortran to C++ and data migrated to the requisite memory spaces to be operated upon by a C++ performance portability library.  The approach builds upon the Fortran 2018 standard “ISO_Fortran_binding.h” header and specialized processing tools to auto generate interoperable types that, in C++, have introspective capability.  The introspective capability of the resulting types allow for transformations of internal data via user defined transformation functions, e.g., to convert Fortran assumed shape arrays into Kokkos::Views
 </p>
-Links:
+<h4>Links</h4>
 <ul>
     <li><a href="https://github.com/lanl/dopey">Github</a> </li>
     <li><a href="https://www.osti.gov/biblio/2372657">Slides</a></li>
 </ul>
 
-<div id="fy267"></div>
-<h3>First digital biophysical model of the entire human cardiovascular system</h3>
+<h3 id="fy267" tabindex="-1">First digital biophysical model of the entire human cardiovascular system</h3>
 Speaker: Maxwell Cole<br>
 University of California, San Diego<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Cardiovascular disease is the leading cause of death worldwide. While substantial progress
 has been made in understanding and managing these diseases, current strategies have not
@@ -831,7 +908,7 @@ optimizations and biophysical improvements, this model has potential to shift
 the change the paradigm of cardiovascular research and patient care.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Dr. Maxwell Cole recently earned his Ph.D. in physics from Louisiana State University,
 where he worked on developing the first digital twin of the entire human cardiovascular
@@ -842,193 +919,183 @@ of California, San Diego, leveraging physics to advance patient care through imp
 prevention, diagnosis, and treatment.
 </p>
 
-<div id="fy268"></div>
-<h3>Computational cosmology meets AI: the birth of a surrogate model for subscale physics</h3>
+<h3 id="fy268" tabindex="-1">Computational cosmology meets AI: the birth of a surrogate model for subscale physics</h3>
 Speaker: Michael L Norman<br>
 Distinguished Professor of Astronomy and Astrophysics at UC San Diego<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 This is the story of how my UCSD graduate student (Azton Wells) hijacked the computational cosmology thesis project I gave him and turned it into an integrated ModSim/AI thesis.  Azton wanted to apply what he had learned about machine learning in CS classes to the problem I suggested. The question was: How do the first stars in the universe pollute the universe with heavy elements and how does that affect the properties of the first galaxies forming subsequently? The product of his thesis research is StarNet [1,2,3], a deep learning based surrogate model for primordial star formation and feedback. In this talk I trace how the surrogate model emerged through trial and error, and how the model was trained using data produced by resolved numerical simulations of primordial star formation and feedback in protogalaxies. I discuss the crucial differences between resolved scales, unresolved scales, and inference scales in the context of our model. I then describe how the surrogate model, prototyped in PyTorch, was exported so that it can be used for inference in running Enzo and Enzo-E simulations. I touch on inference mesh data structures incorporated into Enzo-E for this purpose. I then show some results of simulations using StarNet of the formation of the first galaxies in the universe.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Michael L Norman is Distinguished Professor of Astronomy and Astrophysics at UC San Diego and former director of the San Diego Supercomputer Center. He received his PhD in Engineering and Applied Science from UC Davis while working at the Lawrence Livermore National Laboratory. Subsequently he held research positions at the Max Planck Institute for Astrophysics, Los Alamos National Laboratory, and National Center for Supercomputing Applications, UIUC. His research group, the Laboratory for Computational Astrophysics (est. 1991) develops community application software for astrophysical simulation on supercomputers including ZEUS-2D, ZEUS-3D, ZEUS-MP, Enzo, and Enzo-E. His scientific interests include astrophysical and cosmological fuid dynamics with applications to star formation, interstellar medium, supernova remnants, astrophysical jets, galaxy formation, and X-ray clusters. His technical interests include algorithm development, code development, and parallel computing. In his role as SDSC director, he served as PI for the Gordon, Comet, and Expanse national HPC systems and is currently PI of the CloudBank cloud access project funded by the NSF.
 </p>
 
 References:
 <ol>
-    <li>Wells, A. I. & Norman, M. L. 2021; Predicting Localized Primordial Star Formation with Deep Convolutional Neural Networks, doi: 10.3847/1538-4365/abfa17 </li>
-    <li>Wells, A. I. & Norman, M. L. 2022a; Connecting Primordial Star-forming Regions and Second-generation Star Formation in the Phoenix Simulations, doi: 10.3847/1538-4357/ac6c87</li>
-    <li>Wells, A. I. & Norman, M. L. 2022b; The First Galaxies and the Effect of Heterogeneous Enrichment from Primordial Stars, doi:10.48550/arXiv.2210.14805</li>
+    <li>Wells, A. I. &amp; Norman, M. L. 2021; Predicting Localized Primordial Star Formation with Deep Convolutional Neural Networks, doi: 10.3847/1538-4365/abfa17 </li>
+    <li>Wells, A. I. &amp; Norman, M. L. 2022a; Connecting Primordial Star-forming Regions and Second-generation Star Formation in the Phoenix Simulations, doi: 10.3847/1538-4357/ac6c87</li>
+    <li>Wells, A. I. &amp; Norman, M. L. 2022b; The First Galaxies and the Effect of Heterogeneous Enrichment from Primordial Stars, doi:10.48550/arXiv.2210.14805</li>
 </ol>
 
 
-<div id="fy266"></div>
-<h3>Introducing Enzo-E, an extreme scale AMR radiation hydrodynamic cosmology code built on Charm++</h3>
+<h3 id="fy266" tabindex="-1">Introducing Enzo-E, an extreme scale AMR radiation hydrodynamic cosmology code built on Charm++</h3>
 Speaker: Michael L Norman<br>
 Distinguished Professor of Astronomy and Astrophysics at UC San Diego<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
-Enzo-E is a new, extreme-scale implementation of the venerable Enzo community code (enzo-project.org) for astrophysics and cosmology simulation. Enzo has been in widespread use since the early 2000â€™s but was not designed for todayâ€™s HPC architectures. Enzo-E achieves its extreme scalability through the adoption of a forest-of-octrees AMR mesh approach and the use of the Charm++ parallel object framework which manages the fully distributed AMR data structure. Charm++ is a message-driven asynchronous many-task framework developed at UIUC (charm.cs.illinois.edu). In this talk I briefly review Enzo-Eâ€™s software design, core AMR methods, physics algorithms, and scalability results. Recently, we incorporated a deep learning surrogate model for star formation and feedback which relaxes the resolution requirements in large cosmological simulations of the first galaxies. Current development work is focused on implementing hierarchical adaptive time stepping similar to Enzoâ€™s. Performance studies suggest a 5-10x speedup over the current global timestep approach.
+Enzo-E is a new, extreme-scale implementation of the venerable Enzo community code (enzo-project.org) for astrophysics and cosmology simulation. Enzo has been in widespread use since the early 2000’s but was not designed for today’s HPC architectures. Enzo-E achieves its extreme scalability through the adoption of a forest-of-octrees AMR mesh approach and the use of the Charm++ parallel object framework which manages the fully distributed AMR data structure. Charm++ is a message-driven asynchronous many-task framework developed at UIUC (charm.cs.illinois.edu). In this talk I briefly review Enzo-E’s software design, core AMR methods, physics algorithms, and scalability results. Recently, we incorporated a deep learning surrogate model for star formation and feedback which relaxes the resolution requirements in large cosmological simulations of the first galaxies. Current development work is focused on implementing hierarchical adaptive time stepping similar to Enzo’s. Performance studies suggest a 5-10x speedup over the current global timestep approach.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Michael L Norman is Distinguished Professor of Astronomy and Astrophysics at UC San Diego and former director of the San Diego Supercomputer Center. He received his PhD in Engineering and Applied Science from UC Davis while working at the Lawrence Livermore National Laboratory. Subsequently he held research positions at the Max Planck Institute for Astrophysics, Los Alamos National Laboratory, and National Center for Supercomputing Applications, UIUC. His research group, the Laboratory for Computational Astrophysics (est. 1991) develops community application software for astrophysical simulation on supercomputers including ZEUS-2D, ZEUS-3D, ZEUS-MP, Enzo, and Enzo-E. His scientific interests include astrophysical and cosmological fuid dynamics with applications to star formation, interstellar medium, supernova remnants, astrophysical jets, galaxy formation, and X-ray clusters. His technical interests include algorithm development, code development, and parallel computing. In his role as SDSC director, he served as PI for the Gordon, Comet, and Expanse national HPC systems and is currently PI of the CloudBank cloud access project funded by the NSF.
 </p>
 
-<div id="fy265"></div>
-<h3>AI for code development at LANL</h3>
+<h3 id="fy265" tabindex="-1">AI for code development at LANL</h3>
 Speaker: Tim Burke<br>
 Los Alamos National Laboratory<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 As AI rapidly transforms code development, with industry giants like Microsoft reporting up to 30% of new code being AI-generated, this talk explores the AI resources available to LANL developers. We'll overview the large language models accessible to LANL employees, including ChatGPT Enterprise, AWS-hosted LLMs, and locally-running open-weight models. The presentation will cover both chat UI applications and API integrations for IDEs, Python scripts, and agentic workflows. Real-world examples will demonstrate AI's impact on productivity in LANL code projects, along with insights into emerging agentic workflows. This talk aims to equip LANL developers with practical knowledge of AI tools to enhance their coding efficiency and innovation.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-Tim is the MCATK Monte Carlo radiation transport code team leader in XCP-3. He joined the lab as a Metropolis Postdoctoral Fellow in 2017 after receiving his Ph.D. in Nuclear Engineering and Radiological Sciences and Scientific Computing from the University of Michigan. Tim's work interests focus on productivityâ€“accelerating simulations on GPUs and accelerating code development workflows. He is an early adopter of AI at LANL and continues to push for greater AI resources for code developers.
+Tim is the MCATK Monte Carlo radiation transport code team leader in XCP-3. He joined the lab as a Metropolis Postdoctoral Fellow in 2017 after receiving his Ph.D. in Nuclear Engineering and Radiological Sciences and Scientific Computing from the University of Michigan. Tim's work interests focus on productivity–accelerating simulations on GPUs and accelerating code development workflows. He is an early adopter of AI at LANL and continues to push for greater AI resources for code developers.
 </p>
 
 
-<div id="fy262"></div>
-<h3>Shedding Light on Interaction Binaries: Radiation Hydrodynamics with Octo-Tiger</h3>
-Speaker: Dominic Marcello <a href="https://www.linkedin.com/in/dominic-marcello-71381718b/"><i class="fa fa-linkedin-square" style="font-size:18px"></i></a><br>
-Center for Computation & Technology<br>
+<h3 id="fy262" tabindex="-1">Shedding Light on Interaction Binaries: Radiation Hydrodynamics with Octo-Tiger</h3>
+Speaker: Dominic Marcello <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/dominic-marcello-71381718b/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><br>
+Center for Computation &amp; Technology<br>
 Louisiana State University<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
-Octo-TIGER is an adaptive, octree-based code for modeling self-gravitating hydrodynamics in interacting binaries. We have extended Octo-TIGER to include gray radiation transport via the M1 moment method, coupling radiation energy and flux to the existing PPM hydrodynamics and FMM gravity solvers within a task-based HPX framework. Radiation variables are discretized on the same AMR mesh and evolved using an implicit-explicit scheme to handle both optically thick and thin regimes while conserving total energy and radiative flux. We validate the RHD module with standard radiation test problems, including a planar radiation front propagating through uniform media, radiative equilibration in matterâ€“radiation coupling tests, and diffusion of a Gaussian radiation pulse. These benchmarks confirm the accuracy and efficiency of the M1 implementation in Octo-TIGER, laying the groundwork for forthcoming production runs of interacting binaries with full radiation feedback.
+Octo-TIGER is an adaptive, octree-based code for modeling self-gravitating hydrodynamics in interacting binaries. We have extended Octo-TIGER to include gray radiation transport via the M1 moment method, coupling radiation energy and flux to the existing PPM hydrodynamics and FMM gravity solvers within a task-based HPX framework. Radiation variables are discretized on the same AMR mesh and evolved using an implicit-explicit scheme to handle both optically thick and thin regimes while conserving total energy and radiative flux. We validate the RHD module with standard radiation test problems, including a planar radiation front propagating through uniform media, radiative equilibration in matter–radiation coupling tests, and diffusion of a Gaussian radiation pulse. These benchmarks confirm the accuracy and efficiency of the M1 implementation in Octo-TIGER, laying the groundwork for forthcoming production runs of interacting binaries with full radiation feedback.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-Dominic Marcello is the lead developer of the Octo-TIGER project at the Center for Computation & Technology at Louisiana State University. After earning his PhD in Physics in 2011, he served as a postdoctoral researcher in LSUâ€™s Physics Department before joining CCT as a staff researcher. His work focuses on high-performance computational methods for astrophysics, particularly simulating interacting binary systems using adaptive mesh techniques, advanced hydrodynamics solvers, and radiation transport.
+Dominic Marcello is the lead developer of the Octo-TIGER project at the Center for Computation &amp; Technology at Louisiana State University. After earning his PhD in Physics in 2011, he served as a postdoctoral researcher in LSU’s Physics Department before joining CCT as a staff researcher. His work focuses on high-performance computational methods for astrophysics, particularly simulating interacting binary systems using adaptive mesh techniques, advanced hydrodynamics solvers, and radiation transport.
 </p>
 
-<div id="fy264"></div>
-<h3>Chapel's Batteries-Included Approach for Portable Parallel Programming</h3>
-Speaker: Engin Kayraklioglu <a href="https://www.linkedin.com/in/engink/"><i class="fa fa-linkedin-square" style="font-size:18px"></i></a><br>
+<h3 id="fy264" tabindex="-1">Chapel's Batteries-Included Approach for Portable Parallel Programming</h3>
+Speaker: Engin Kayraklioglu <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/engink/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><br>
 Hewlett Packard Enterprise (HPE)<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Virtually all modern processors, including GPUs, from the consumer-grade to the highest-end are parallel. However, none of the mainstream programming languages support different flavors of hardware parallelism as a first-class concept. Capability to exploit parallelism in the hardware is typically achieved by augmenting inherently sequential programming languages like C, C++, or Fortran with add-ons like OpenMP, MPI, CUDA, OpenCL, or Kokkos.<br><br>
 Chapel stands out as a programming language designed with parallelism and locality as first-class concepts in the programming language itself. That, and other modern programming features, have enabled Chapel users to overcome the barriers to parallel programming and HPC. In this talk, I will go over how parallelism and locality are expressed in Chapel, and how they can be used to target GPUs in a vendor-neutral manner. I will also refer to several success stories from the Chapel community.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Engin Kayraklioglu is a Principal Engineer at Hewlett Packard Enterprise (HPE), where he is a member of the Chapel team. His duties include leading GPU support effort, as well as the Arkouda project (<a href="https://arkouda-www.github.io/">https://ark    ouda-www.github.io/</a>). Before joining HPE (formerly Cray Inc.), Engin received his Ph.D. from The George Washington University in 2019. His interests are high-performance computing, programmer productivity and performance optimizations.
 </p>
-Materials:
+<h4>Materials</h4>
 <ul>
     <li><a href="https://chapel-lang.org/presentations/EnginLANL2025.pdf">Slides</a></li>
 </ul>
 
 
-<div id="fy263"></div>
-<h3>Accelerated Quantum Supercomputing with CUDA-Q</h3>
-Speaker: Monica Van Dieren <a href="https://www.linkedin.com/in/monica-vandieren/"><i class="fa fa-linkedin-square" style="fon    t-size:18px"></i></a><br>
+<h3 id="fy263" tabindex="-1">Accelerated Quantum Supercomputing with CUDA-Q</h3>
+Speaker: Monica Van Dieren <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/monica-vandieren/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><br>
 Nvidia<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Quantum computing holds the promise of transforming industries and ushering in a new era of high-performance computing. However, achieving this potential depends heavily on AI supercomputing to address algorithm research and overcome the challenges of design, control, and integration that impede the development of practical quantum devices. This presentation explores the future landscape of large-scale, commercially viable hybrid quantum devices, enabled by GPU-accelerated simulations, AI-enhanced algorithms, and tightly coupled HPC control systems. We also introduce CUDA-Q, the open source, qubit-agnostic platform driving this vision forward.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-As a Senior Technical Marketing Engineer at NVIDIA, Monica VanDieren specializes in quantum and high-performance computing, driving initiatives such as the CUDA-Q Academic program. Before joining NVIDIA, Monica worked on IBMâ€™s Quantum Accelerator programs. With a Ph.D. in Mathematical Sciences from Carnegie Mellon University, she brings over 20 years of academic experience at universities such as Stanford, University of Michigan, and Robert Morris University to her work.
+As a Senior Technical Marketing Engineer at NVIDIA, Monica VanDieren specializes in quantum and high-performance computing, driving initiatives such as the CUDA-Q Academic program. Before joining NVIDIA, Monica worked on IBM’s Quantum Accelerator programs. With a Ph.D. in Mathematical Sciences from Carnegie Mellon University, she brings over 20 years of academic experience at universities such as Stanford, University of Michigan, and Robert Morris University to her work.
+</p>
 
-<div id="fy258"></div>
-<h3>LCI: a Lightweight Communication Interface for Asynchronous Multithreaded Communication</h3>
-Speaker: Jiakun Yan <a href="https://www.linkedin.com/in/jiakun-yan-81bb88196/"><i class="fa fa-linkedin-square" s    tyle="font-size:18px"></i></a><br>
+<h3 id="fy258" tabindex="-1">LCI: a Lightweight Communication Interface for Asynchronous Multithreaded Communication</h3>
+Speaker: Jiakun Yan <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/jiakun-yan-81bb88196/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><br>
 University of Illinois Urbana-Champaign<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 The Lightweight Communication Interface (LCI) is an experimental communication library aiming for better asynchronous multithreaded communication support, both in terms of performance and programmability. It is also a research tool helping us understand how to design communication libraries to better fit the needs of dynamic programming systems/applications. It features a simple, incrementally refinable interface unifying all common point-to-point communication primitives and an atomic-based runtime for maximum threading efficiency. It has been integrated into established asynchronous many-task systems such as HPX and shown significant performance improvement on microbenchmarks/real-world applications. This talk will present an overview of its interface and software design and showcase its performance.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Jiakun Yan is a fifth-year Ph.D. student at UIUC, advised by Prof. Marc Snir. His research involves exploring better communication library designs for highly dynamic/irregular programming systems and applications. He is the main contributor to the Lightweight Communication Interface (LCI) Project and the HPX LCI parcelport.
 </p>
 
 
-<div id="fy261"></div>
-<h3>Scaling AI for Scientific Discovery: Faster Kernels, Efficient Models, Better Physics</h3>
-Speaker: Aparna Chandramowlishwaran <a href="https://www.linkedin.com/in/aparna-chandramowlishwaran-302153b/"><i class="fa fa-linkedin-square" style="font-size:18px"></i></a> <br>
+<h3 id="fy261" tabindex="-1">Scaling AI for Scientific Discovery: Faster Kernels, Efficient Models, Better Physics</h3>
+Speaker: Aparna Chandramowlishwaran <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/aparna-chandramowlishwaran-302153b/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <br>
 University of California, Irvine<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 As AI becomes a powerful tool in scientific computing, two challenges emerge: (1) efficiently scaling models on modern hardware, and (2) ensuring these models can learn complex physics with fidelity and generalizability. In this talk, I will discuss our work at this intersection.
-First, I will introduce Fused3S, a GPU-optimized algorithm for sparse attentionâ€”the backbone of graph neural networks and transformers. By fusing matrix operations, Fused3S reduces data movement and maximizes tensor core utilization, achieving state-of-the-art performance across diverse workloads. Then, I will present BubbleML and Bubbleformer, our efforts to model boiling dynamics with ML. Boiling is fundamental to energy, aerospace, and nuclear applications, yet remains difficult to model due to the interplay of turbulence, phase change, and nucleation. By combining large-scale simulation datasets with transformer architectures, Bubbleformer forecasts boiling dynamics across fluids, geometries, and operating conditions. Together, these efforts illustrate how scaling AIâ€”both computationally and scientificallyâ€”can accelerate discovery across disciplines. I will conclude with open challenges and opportunities in AI-driven scientific computing, from hardware-aware models to foundation models for physics.
+First, I will introduce Fused3S, a GPU-optimized algorithm for sparse attention—the backbone of graph neural networks and transformers. By fusing matrix operations, Fused3S reduces data movement and maximizes tensor core utilization, achieving state-of-the-art performance across diverse workloads. Then, I will present BubbleML and Bubbleformer, our efforts to model boiling dynamics with ML. Boiling is fundamental to energy, aerospace, and nuclear applications, yet remains difficult to model due to the interplay of turbulence, phase change, and nucleation. By combining large-scale simulation datasets with transformer architectures, Bubbleformer forecasts boiling dynamics across fluids, geometries, and operating conditions. Together, these efforts illustrate how scaling AI—both computationally and scientifically—can accelerate discovery across disciplines. I will conclude with open challenges and opportunities in AI-driven scientific computing, from hardware-aware models to foundation models for physics.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-Aparna Chandramowlishwaran is an Associate Professor at the University of California, Irvine, in the Department of Electrical Engineering and Computer Science. She received her Ph.D. in Computational Science and Engineering from Georgia Tech in 2013 and was a research scientist at MIT prior to joining UCI as an Assistant Professor in 2015. Her research labâ€” HPC Forgeâ€”aims at advancing computational science using high-performance computing and machine learning. She currently serves as the associate editor of the ACM Transactions on AI for Science.
+Aparna Chandramowlishwaran is an Associate Professor at the University of California, Irvine, in the Department of Electrical Engineering and Computer Science. She received her Ph.D. in Computational Science and Engineering from Georgia Tech in 2013 and was a research scientist at MIT prior to joining UCI as an Assistant Professor in 2015. Her research lab— HPC Forge—aims at advancing computational science using high-performance computing and machine learning. She currently serves as the associate editor of the ACM Transactions on AI for Science.
 </p>
 
 
-<div id="fy260"></div>
-<h3>Driving Continuous Integration and Developer Workflows with Spack</h3>
-Speaker: Richard Berger <a href="https://www.linkedin.com/in/richard-felix-berger/"><i class="fa fa-linkedin-square" style="font-size:18px"></i></a><br>
+<h3 id="fy260" tabindex="-1">Driving Continuous Integration and Developer Workflows with Spack</h3>
+Speaker: Richard Berger <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/richard-felix-berger/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><br>
 Los Alamos National Laboratory<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Spack makes it easy to install dependencies for our software on multiple HPC platforms. However, there is little guidance on how to structure Spack environments for larger projects, share common Spack installations with code teams and utilize them in an effective way for continuous integration and development. This presentation will share some of the lessons learned from deploying chained Spack installations for multiple code teams at LANL on various HPC platforms both on site and on other Tri-Lab systems, how to structure such deployments for reusability and upgradability, and make them deployable even on air-gapped systems. It will also show how we utilize Spack's build facilities to drive CMake-based projects on GitLab for continuous integration, without having to replicate build configuration logic in GitLab files, while giving developers an easy-to-follow workflow for recreating CI runs in various configurations.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Richard is a research software engineer in the Applied Computer Science Group (CCS-7) at Los Alamos National Laboratory (LANL) with a background in Mechatronics, high-performance computing, and software engineering. He is currently contributing to the core development of LAMMPS, FleCSI and working on DevOps for multiple other LANL projects.
 </p>
 
-<div id="fy259"></div>
-<h3>Introducing the Lamellar Runtime: A Modern Approach to High-Performance Computing</h3>
-Speaker: Ryan Friese <a href="https://www.linkedin.com/in/ryandfriese/"><i class="fa fa-linkedin-square"     style="font-size:18px"></i></a> <br>
+<h3 id="fy259" tabindex="-1">Introducing the Lamellar Runtime: A Modern Approach to High-Performance Computing</h3>
+Speaker: Ryan Friese <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/ryandfriese/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <br>
 Pacific Northwest National Laboratory<br>
 Senior computer scientist<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 In the realm of High-Performance Computing (HPC), achieving peak system performance while maintaining code safety and concurrency has always been a challenging endeavor. Traditional HPC frameworks often struggle with memory safety issues, race conditions, and the complexities of parallel programming. In this talk, I introduce Lamellar, a new HPC runtime that leverages the modern programming language Rust to address these enduring challenges.
 Rust, known for its powerful type system and memory safety guarantees without a garbage collector, is rapidly gaining traction within the systems programming community. However, its potential in the HPC domain is yet to be fully explored. The Lamellar runtime harnesses Rust's strengths, providing a robust, scalable, and safe environment for developing and executing high-performance applications.
 This talk is designed for computational domain and computer scientists who are well-acquainted with HPC concepts but may be new to Rust. The talk will cover the following key topics:
+</p>
 <ol>
-    <li>Introduction to Rust: An overview of Rustâ€™s features and why it's suitable for HPC applications.</li>
+    <li>Introduction to Rust: An overview of Rust’s features and why it's suitable for HPC applications.</li>
     <li>Understanding the Lamellar Runtime: A deep dive into the architecture and core components of the Lamellar runtime and stack.</li>
-    <li>Concurrency and Parallelism: How Rustâ€™s concurrency model and Lamellar APIâ€™s ensure safe parallel execution, eliminating common pitfalls like data races.</li>
+    <li>Concurrency and Parallelism: How Rust’s concurrency model and Lamellar API’s ensure safe parallel execution, eliminating common pitfalls like data races.</li>
     <li>Performance Benchmarks: Comparative analysis showcasing the performance benefits of using Rust Lamellar Runtime in selected benchmarks.
     </li>
     <li>Getting Started: Resources, tools, and best practices for adopting Rust and Lamellar in your HPC projects.</li>
 </ol>
-Join me as we look into the future of HPC with Rust and the Lamellar Runtime.
+<p>Join me as we look into the future of HPC with Rust and the Lamellar Runtime.</p>
+<h4>Bio</h4>
 <p>
-Bio:
-<p>
-Dr. Ryan Friese is a senior computer scientist at Pacific Northwest National Laboratory in the Future Computing Technologies group. His research interests span hardware/software co-design of runtime and system software for novel architectures, HPC (high performance computing) network simulation and modeling, the analysis and optimization of data movement in large scale distributed workflows, and performance modeling of irregular applications. His recent work has focused on enabling memory safe programming on HPC systems by leading the development of the Lamellar Runtime, an asynchronous distributed runtime written in the Rust Programming Language. He received his PhD in Electrical & Computer Engineering in 2015 from Colorado State University.
+Dr. Ryan Friese is a senior computer scientist at Pacific Northwest National Laboratory in the Future Computing Technologies group. His research interests span hardware/software co-design of runtime and system software for novel architectures, HPC (high performance computing) network simulation and modeling, the analysis and optimization of data movement in large scale distributed workflows, and performance modeling of irregular applications. His recent work has focused on enabling memory safe programming on HPC systems by leading the development of the Lamellar Runtime, an asynchronous distributed runtime written in the Rust Programming Language. He received his PhD in Electrical &amp; Computer Engineering in 2015 from Colorado State University.
 </p>
 
 
-<div id="fy257"></div>
-<h3>Deploying and Supporting Julia at NERSC</h3>
-Speaker: Johannes Blaschke <a href="https://www.linkedin.com/in/johannes-blaschke/"><i class="fa fa-linkedin-square" style="font-size:18px"></i></a><br>
+<h3 id="fy257" tabindex="-1">Deploying and Supporting Julia at NERSC</h3>
+Speaker: Johannes Blaschke <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/johannes-blaschke/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><br>
 National Energy Research Scientific Computing Center<br>
 Application Performance Specialist<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Julia has been supported as a first-class language on NERSC's systems for over 10 years [1]. In this talk we will discuss how Julia has been deployed at scale, the technical issues encountered and how they were eventually overcome. We will also explore the challenges faced with developing intuitive and portable distributed HPC applications that are capable of targeting modern GPU architectures, and NERSC's vision for supporting modern interdisciplinary and multi-facility workflows.
 <br>
@@ -1036,45 +1103,44 @@ Julia has been supported as a first-class language on NERSC's systems for over 1
 [1] <a href="https://info.juliahub.com/case-studies/celest">https://info.juliahub.com/case-studies/celeste</a>
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Johannes Blaschke is a HPC workflow performance expert leading the NERSC Science Acceleration Program (NESAP). His research interests include urgent and interactive HPC; and programming environments and models for cross-facility workflows. Johannes supports Julia on NERSC's systems, including one of the first examples of integrating MPI.jl and Distributed.jl with the HPE's Slingshot network technology. Johannes is a zealous advocate for Julia as an HPC programming language, and a contributor and organizer of Julia tutorials and BoFs at SC, JuliaCon and within the DoE.
 </p>
 
-<div id="fy256"></div>
-<h3>The value proposition of the Julia language for DOEâ€™s mission</h3>
-Speaker: William Godoy <a href="https://www.linkedin.com/in/william-f-godoy-7326a351/"><i class="fa fa-linkedin-square"     style="font-size:18px"></i></a><br>
+<h3 id="fy256" tabindex="-1">The value proposition of the Julia language for DOE’s mission</h3>
+Speaker: William Godoy <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/william-f-godoy-7326a351/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><br>
 Oak Ridge National Laboratory<br>
 Senior computer scientist<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 We present a summary of our research and community efforts exploring the Julia
 language for the scientific mission of the US Department of Energy (DOE) at the
 intersection of high-performance computing (HPC) and high-productivity. Powered by
 the LLVM compiler infrastructure combined with a unifying ecosystem and friendly
-scientific syntax, Julia attempts to lower cost of a â€œtwo-language and multiple
-ecosystemsâ€ paradigm (e.g. Python+compiled language). Along with the Julia intro and
+scientific syntax, Julia attempts to lower cost of a “two-language and multiple
+ecosystems” paradigm (e.g. Python+compiled language). Along with the Julia intro and
 HPC hands-on tutorials, we present our efforts on: (i) building an accessible
 performance portable CPU/GPU library: JACC.jl, (ii) the outcome of external venues
 (SC BoFs, tutorials) and workshops at Oak Ridge National Laboratory (ORNL), and (iii)
 our research, best paper at SC23 WORKS, on the unifying value for using a single
 front-end language on Frontier, the second fastest supercomputer in the world, and (iv)
-our work, best paper at SC24 XLOOP, connecting ORNLâ€™s experimental and
+our work, best paper at SC24 XLOOP, connecting ORNL’s experimental and
 computational facilities using JACC.jl. Hence, Julia aspires to make more accessible the
 future landscape of heterogeneous, AI-driven, and energy-aware computing by
 leveraging existing investments outside DOE in LLVM and commercial applications of
 the language.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 William Godoy is a senior computer scientist in the Computer Science and Mathematics
 Division at Oak Ridge National Laboratory (ORNL). His interests are in
 high-performance computing, parallel programming systems, scientific software and
 workflows. At ORNL, he contributed to the Exascale Computing Project applications
--QMCPACK- and software technologies portfolios â€“ ADIOS2, Julia/LLVM, and projects
-impacting ORNLâ€™s computing and neutron science facilities. Godoy currently works
+-QMCPACK- and software technologies portfolios – ADIOS2, Julia/LLVM, and projects
+impacting ORNL’s computing and neutron science facilities. Godoy currently works
 across research projects funded by the US Department of Energy Advanced Scientific
 Computing Research (ASCR) program. Prior to ORNL, he was a staff member at Intel
 Corporation and a postdoctoral fellow at NASA Langley Research Center. Godoy
@@ -1084,87 +1150,82 @@ mechanical engineering. He is a senior member of the IEEE, and a member of ACM,
 ASME and US-RSE serving in several venues and technical committees.
 </p>
 
-<div id="fy255"></div>
-<h3>Transparent Resource Adaptivity for Task-Based Applications on Supercomputers</h3>
-Speaker: Jonas Posner <a href="https://www.linkedin.com/in/jonas-posner-086381149/"><i class="fa fa-linkedin-square"     style="font-size:18px"></i></a><br>
+<h3 id="fy255" tabindex="-1">Transparent Resource Adaptivity for Task-Based Applications on Supercomputers</h3>
+Speaker: Jonas Posner <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/jonas-posner-086381149/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><br>
 University of Kassel, Germany<br>
 Substitute Chair - Software Engineering<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Traditional static resource allocation in supercomputers (jobs retain a fixed set of resources) leads to inefficiencies. Resource adaptivity (jobs can change resources at runtime) significantly increases supercomputer efficiency.<br>
 This talk will exploit Asynchronous Many-Task (AMT) programming, which is well suited for adaptivity due to its transparent resource management. An AMT runtime system dynamically assigns user-defined small tasks to workers to achieve load balancing and adapt to resource changes.<br>
 We will discuss techniques for malleability and evolving capabilities that allow programs to dynamically change resources without interrupting computation. Automatic load detection heuristics determine when to start or terminate processes, which is particularly beneficial for unpredictable workloads. Practicality is demonstrated by adapting the GLB library. A generic communication interface allows interaction between programs and resource managers. Evaluations with a prototype resource manager show significant improvements in batch makespan, node utilization, and job turnaround time for both malleable and evolving jobs.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-Jonas is a dedicated computer scientist specializing in High Performance Computing. He received his Bachelorâ€™s and Masterâ€™s degrees from the University of Kassel, Germany, where he also earned his Ph.D. in 2022. He is currently working as an substitute chair for the Software Engineering Group at the same university and is also writing his habilitation.<br>
+Jonas is a dedicated computer scientist specializing in High Performance Computing. He received his Bachelor’s and Master’s degrees from the University of Kassel, Germany, where he also earned his Ph.D. in 2022. He is currently working as an substitute chair for the Software Engineering Group at the same university and is also writing his habilitation.<br>
 Jonas' research interests include load balancing, fault tolerance, and resource adaptivity for Asynchronous Many-Task (AMT) systems. Recently, he has focused on resource adaptivity in general to optimize the efficient use of supercomputing resources. His work covers a broad spectrum, including the development of advanced job scheduling algorithms, the improvement of application programming using AMT systems, and the interaction between resource managers and jobs.
 </p>
 
-<div id="fy254" />
-<h3>Rust and type safety for MPI and scientific computing</h3>
-Speaker: Jed Brown <a href="https://www.linkedin.com/in/jed-brown-78295421/"><i class="fa fa-linkedin-square"         style="font-size:18px"></i></a><br>
+<h3 id="fy254" tabindex="-1">Rust and type safety for MPI and scientific computing</h3>
+Speaker: Jed Brown <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/jed-brown-78295421/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><br>
 University of Colorado Boulder<br>
 Associate Professor of Computer Science<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Rust is a modern language that provides type- and memory-safety without a garbage collector, using a concept called lifetimes. Many see Rust as a successor to languages like C and C++, and there are many interested individuals in the computational science community, yet few major projects have made the switch. I'll introduce the language and its ecosystem, including the state of scientific computing libraries. We'll discuss what soundness means for libraries and examine rsmpi, which safely exposes MPI and allows catching many common bugs at compile-time. We'll also discuss type-system approaches to collective semantics, and conclude with an outlook on Rust for scientific computing.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Jed leads the Physical Prediction, Inference, and Design group at CU Boulder. He is a maintainer of PETSc, libCEED, and rsmpi (Rust bindings to MPI), and is active in many open source communities. He works on high-performance numerical software infrastructure for computational science and engineering, as well as applications such as structural mechanics and materials science, non-Newtonian and turbulent flows, and plasmas. He is co-director of the PSAAP-3 Multidisciplinary Simulation Center for Micromorphic Multiphysics Porous and Particulate Materials Simulations Within Exascale Computing Workflows.
 </p>
-Materials:
+<h4>Materials</h4>
 <ul>
     <li><a href="https://github.com/jedbrown/talks/blob/main/20250212-RustSciComp.ipynb">Slides</a></li>
 </ul>
 
-<div id="fy253"></div>
-<h3>Thermonuclear electron-capture supernovae - Motivating a long-overdue update to the supernova modeling pipeline for the exascale computing age</h3>
+<h3 id="fy253" tabindex="-1">Thermonuclear electron-capture supernovae - Motivating a long-overdue update to the supernova modeling pipeline for the exascale computing age</h3>
 Speaker: Alexander Holas<br>
 Heidelberg Institute for Theoretical Studies<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 The thermonuclear supernova modeling pipeline has been refined for over four decades and has achieved substantial success in modeling various supernova subtypes. Nonetheless, continuous innovation is essential for maintaining supernova modeling at the forefront of computational astrophysics. In this work, we examine a novel scenario, so called thermonuclear electron-capture supernovae. Originally proposed by Jones et al. (2016), this scenario consists of a collapsing sAGB star that only narrowly escape collapse to a neutron star by runaway thermonuclear burning. Here, we explore the specific circumstances under which such a thermonuclear explosion can occur and under which conditions the collapse can be averted by nuclear burning. Subsequently, we leverage this scenario to motivate a long-overdue update to the thermonuclear supernova modeling pipeline, both by increasing the complexity of the physics included, as well as updating the underlying codebase for the latest exascale computing clusters. In particular, we advocate the integration of radiation hydrodynamics and the transition towards a performance portable programming model.
-</P>
+</p>
 
-Bio:
+<h4>Bio</h4>
 <ul>
 <li> Undergraduate at Ulm University</li>
-<li> Master Studies at the Technical University of Munich and the Max Planck Institute for Astrophysics (Thesis: Determination of the Expansion Rate of the Universe by Means of Type IIâ€‘P Supernovae)</li>
+<li> Master Studies at the Technical University of Munich and the Max Planck Institute for Astrophysics (Thesis: Determination of the Expansion Rate of the Universe by Means of Type II‑P Supernovae)</li>
 <li> PhD at the Heidelberg Institute for Theoretical Studies/ Heidelberg University on numerical simulations of thermonuclear supernovae (Working project title: Thermonuclear electron-capture supernovae - thermonuclear explosion or gravitational collapse?)</li>
 <li> Fellow at the International Max Planck Research School Heidelberg</li>
 </ul>
 
-<div id="fy251"></div>
-<h3>RISC-V HPC Terrain Familiarization</h3>
-Speaker: Chris Taylor <a href="https://www.linkedin.com/in/christopher-taylor-8250a48/"><i class="fa fa-linkedin-square"             style="font-size:18px"></i></a><br>
+<h3 id="fy251" tabindex="-1">RISC-V HPC Terrain Familiarization</h3>
+Speaker: Chris Taylor <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/christopher-taylor-8250a48/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><br>
 Tactical Computing Lab<br>
 Principle Research Engineer<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 The number of RISC-V commercial products increased substantially this past year. This presentation is an orientation to the range of RISC-V hardware, HPC software support, the community, and the current state of HPC-relevant ISA extensions. Acquiring RISC-V hardware is no longer a question of when - it is possible now.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Chris is a senior principle research engineer at Tactical Computing Labs. His work experience includes compilers, runtime systems, systems level software, numerical libraries, applied math problems, and hardware simulation. He has a Masters Degree in Computer Science from Georgia Tech and an undergraduate degree in Computer Science from Clemson.
 </p>
 
-<div id="fy252"></div>
-<h3>Asynchronous-Many-Task Systems: Challenges and Opportunities - Scaling an AMR Astrophysics Code on Exascale machines using Kokkos and HPX</h3>
+<h3 id="fy252" tabindex="-1">Asynchronous-Many-Task Systems: Challenges and Opportunities - Scaling an AMR Astrophysics Code on Exascale machines using Kokkos and HPX</h3>
 
-Speaker: Gregor Dai&szlig; <a href="https://www.linkedin.com/in/gregor-daiss/"><i class="fa fa-linkedin-square"             style="font-size:18px"></i></a><br>
+Speaker: Gregor Dai&szlig; <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/gregor-daiss/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><br>
 University of Stuttgart<br>
 Institute for Parallel and Distributed System<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 Dynamic and adaptive mesh refinement is pivotal in high-resolution,
 multi-physics simulations, necessitating precise physics resolution in
@@ -1186,9 +1247,9 @@ frameworks together in Octo-Tiger and how we addressed them, ultimately
 achieving scalability on a selection of current supercomputers.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-Gregor DaiÃŸ is a PhD student at the University of Stuttgart,
+Gregor Daiß is a PhD student at the University of Stuttgart,
 specializing in high-performance computing. His main interests
 include task-based runtime systems, distributed computing,
 performance-portability as well as refactoring large-scale
@@ -1197,50 +1258,53 @@ mostly involves both Kokkos (for performance-portability) and
 HPX (task-based runtime system) for these purposes.
 </p>
 
-<div id="fy242"></div>
-<h3>Journal of Open Source Software: bot-assisted open peer review and publication</h3>
+<h3 id="fy242" tabindex="-1">Journal of Open Source Software: bot-assisted open peer review and publication</h3>
 
-Speaker: Kyle Niemeyer <a href="https://www.linkedin.com/in/kyleniemeyer/"><i class="fa fa-linkedin-square"                 style="font-size:18px"></i></a><br>
+Speaker: Kyle Niemeyer <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/kyleniemeyer/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><br>
 Oregon State University<br>
 School of Mechanical, Industrial, and Manufacturing Engineering<br>
 Associate Professor<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
-The Journal of Open Source Software (JOSS) is an open-access, no-fee scholarly journal that publishes quality open-source research software based on open peer review. JOSS was founded in 2016 with the dual objectives of giving traditional academic publication credit for software work and improving the quality of research software. Since its founding, JOSS has published over 2500 software papersâ€”and counting!â€”with over 80 active editors spread across seven topic-area tracks. To handle this level of submissions and publishing, relying on a fully volunteer team, JOSS relies on GitHub and a system of open tools for reviewing and publishing submissions, driven by chatbot commands. Authors submit short Markdown papers along with links to their software's repository, which are compiled to PDF via Pandoc. JOSSâ€™s editorial bot performs automated health checks on submissions, and reviews take place in GitHub issues, with authors, editors, and reviewers issuing bot commands via comments. This talk will describe the publication experience of JOSS and its machinery, and how it can be adapted by other communities.
+The Journal of Open Source Software (JOSS) is an open-access, no-fee scholarly journal that publishes quality open-source research software based on open peer review. JOSS was founded in 2016 with the dual objectives of giving traditional academic publication credit for software work and improving the quality of research software. Since its founding, JOSS has published over 2500 software papers—and counting!—with over 80 active editors spread across seven topic-area tracks. To handle this level of submissions and publishing, relying on a fully volunteer team, JOSS relies on GitHub and a system of open tools for reviewing and publishing submissions, driven by chatbot commands. Authors submit short Markdown papers along with links to their software's repository, which are compiled to PDF via Pandoc. JOSS’s editorial bot performs automated health checks on submissions, and reviews take place in GitHub issues, with authors, editors, and reviewers issuing bot commands via comments. This talk will describe the publication experience of JOSS and its machinery, and how it can be adapted by other communities.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
-Kyle E. Niemeyer is an Associate Professor at Oregon State University in the School of Mechanical, Industrial, and Manufacturing Engineering. He also serves as the Associate School Head for Undergraduate Programs. He leads the Niemeyer Research Group, which uses computational modeling to study various phenomena involving fluid flows, including combustion and chemical kinetics, and related topics like numerical methods and parallel computing. He is also a strong advocate of open access, open source software, and open science in general, and has contributed in the area of standardizing research software citation. Kyle has received multiple prestigious fellowships throughout his career, including the AAAS Science & Technology Policy Fellowship in 2022, the Better Scientific Software (BSSw) Fellowship in 2019, the NSF Graduate Research Fellowship in 2010, and the National Defense Science and Engineering Graduate Fellowship in 2009. Kyle received his Ph.D. in Mechanical Engineering from Case Western Reserve University in 2013. He received BS and MS degrees in Aerospace Engineering from Case Western Reserve University in 2009 and 2010, respectively.
+Kyle E. Niemeyer is an Associate Professor at Oregon State University in the School of Mechanical, Industrial, and Manufacturing Engineering. He also serves as the Associate School Head for Undergraduate Programs. He leads the Niemeyer Research Group, which uses computational modeling to study various phenomena involving fluid flows, including combustion and chemical kinetics, and related topics like numerical methods and parallel computing. He is also a strong advocate of open access, open source software, and open science in general, and has contributed in the area of standardizing research software citation. Kyle has received multiple prestigious fellowships throughout his career, including the AAAS Science &amp; Technology Policy Fellowship in 2022, the Better Scientific Software (BSSw) Fellowship in 2019, the NSF Graduate Research Fellowship in 2010, and the National Defense Science and Engineering Graduate Fellowship in 2009. Kyle received his Ph.D. in Mechanical Engineering from Case Western Reserve University in 2013. He received BS and MS degrees in Aerospace Engineering from Case Western Reserve University in 2009 and 2010, respectively.
 </p>
-Material:
+<h4>Materials</h4>
 <ul>
-    <li> <a href="https://zenodo.org/records/13799976">Slides</a> <i class="ai ai-zenodo ai-2x"></i></li>
+    <li> <a href="https://zenodo.org/records/13799976">Slides</a> <i class="ai ai-zenodo ai-2x" aria-hidden="true"></i></li>
 </ul>
 
-<div id="fy241"></div>
-<h3>Improving MPI Interoperability for Modern Languages and Systems</h3>
+<h3 id="fy241" tabindex="-1">Improving MPI Interoperability for Modern Languages and Systems</h3>
 
-Speaker: Joseph Schuchart <a href="https://www.linkedin.com/in/joseph-schuchart-44368077/"><i class="fa fa-linkedin-square"                     style="font-size:18px"></i></a><br>
+Speaker: Joseph Schuchart <a class="icon-link" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/joseph-schuchart-44368077/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a><br>
 Stony Brook University<br>
 Institute for Advanced Computational Science<br>
 Senior Research Scientist<br><br>
 
-Abstract:
+<h4>Abstract</h4>
 <p>
 The Message Passing Interface standard has long been the lingua franca of HPC. Its design has enabled the development of many distributed parallel applications. After 30 years, the field of high-performance computing has seen several programming paradigms come and go. However, MPI has yet to address the challenges of accelerator-based computing, the advent of modern languages such as Rust, Python, and C++, and fully asynchronous programming models. This talk will provide insights into current efforts on modernizing MPI, from accelerator integration to improved datatype handling for modern languages.
 </p>
 
-Bio:
+<h4>Bio</h4>
 <p>
 Joseph Schuchart is a Senior Research Scientist at the Institute for Advanced Computational Sciences at Stony Brook University. His research revolves around distributed asynchronous and task-based programming models, communication libraries, and design aspects of integrating different models. Joseph received his M.Sc. in Computer Science from Dresden University of Technology in 2012 and his PhD from the University of Stuttgart in 2020. He is an active member of the MPI Forum and a contributor to the Open MPI project.
 </p>
 
-<center>
-Sponsored by <a href="">Information Science & Technology Institute</a> (ISTI)
-</center>
-LA-UR-24-30763
+<section aria-labelledby="recordings-heading">
+<h2 id="recordings-heading">Recordings and transcripts</h2>
+<p>No recordings are currently listed. When recordings are published, they will include synchronized captions and a text transcript.</p>
+</section>
+</main>
+<footer class="site-footer">
+<p>Sponsored by Information Science &amp; Technology Institute (ISTI)</p>
+<p>LA-UR-24-30763</p>
+</footer>
 </body>
 </html>
 
