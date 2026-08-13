@@ -1,0 +1,518 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Advances in Applied Computer Science Speaker Series</title>
+  <subtitle>Upcoming talks from the Advances in Applied Computer Science Invited Speaker Series</subtitle>
+  <id>https://appliedcomputerscienceseries.lanl.gov/</id>
+  <updated>2026-08-13T16:25:09Z</updated>
+  <link rel="alternate" href="https://appliedcomputerscienceseries.lanl.gov/" />
+  <link rel="self" type="application/atom+xml" href="https://appliedcomputerscienceseries.lanl.gov/feed.xml" />
+  <author>
+    <name>Patrick Diehl and Philipp Edelmann</name>
+  </author>
+  <entry>
+    <title>Taming Performance Variability at Exascale: Mitigating OS Noise on El Capitan</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy271</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy271" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Edgar Leon</name>
+    </author>
+    <summary>Edgar Leon will present on September 15, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Edgar Leon&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; September 15, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy271"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Julia meets the Intelligence Processing Unit</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy272</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy272" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Mose Giordano</name>
+    </author>
+    <summary>Mose Giordano will present on August 27, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Mose Giordano&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; August 27, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy272"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>From HPC to HPCQC: Software Foundations for Hybrid Classicalâ€“Quantum Computing</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy273</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy273" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Martin Schulz</name>
+    </author>
+    <summary>Martin Schulz will present on August 26, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Martin Schulz&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; August 26, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy273"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Approaches and Challenges in Porting Scientific Applications to the Cerebras Wafer-Scale Engine</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy274</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy274" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Piotr ÅuczyÅ„ski</name>
+    </author>
+    <summary>Piotr ÅuczyÅ„ski will present on August 19, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Piotr ÅuczyÅ„ski&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; August 19, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy274"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Q-PAC â€” An Open Architecture System with Full Pulse Control for QEC Development</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy275</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy275" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Brandon Giles / Joseph Glick</name>
+    </author>
+    <summary>Brandon Giles / Joseph Glick will present on August 18, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Brandon Giles / Joseph Glick&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; August 18, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy275"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>From RISC-V Accelerators to Galaxy Systems: Tenstorrent Hardware, Software, and AI Performance</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy276</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy276" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Chris Taylor</name>
+    </author>
+    <summary>Chris Taylor presented on August 12, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Chris Taylor&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; August 12, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy276"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Lamellar: Enabling Memory-Safe Distributed HPC in Rust</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy277</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy277" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Ryan Friese</name>
+    </author>
+    <summary>Ryan Friese presented on July 29, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Ryan Friese&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; July 29, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy277"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Automated Floating-Point Precision Tuning: Challenges, Progress, and Future Opportunities</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy278</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy278" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Cindy Rubio-GonzÃ¡lez</name>
+    </author>
+    <summary>Cindy Rubio-GonzÃ¡lez presented on July 22, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Cindy Rubio-GonzÃ¡lez&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; July 22, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy278"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Distributed-Memory Real-Space Parallel DMRG for Large-Scale Matrix Product States</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy279</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy279" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Matthew Blomquist</name>
+    </author>
+    <summary>Matthew Blomquist presented on July 16, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Matthew Blomquist&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; July 16, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy279"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>ORNL R&amp;D efforts on HPC programming: LLMs and high-productivity languages</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2711</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2711" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>William Godoy / Philip Fackler</name>
+    </author>
+    <summary>William Godoy / Philip Fackler presented on July 15, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; William Godoy / Philip Fackler&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; July 15, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2711"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Scientific research through the lens of qutrits: Neutrino flavor oscillations and discrete time crystals</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2710</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2710" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Ermal Rrapaj</name>
+    </author>
+    <summary>Ermal Rrapaj presented on July 14, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Ermal Rrapaj&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; July 14, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2710"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Ensemble Based Consistency Testing: Keeping Chaotic Codes on Course</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2712</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2712" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Teo Price-Broncucia</name>
+    </author>
+    <summary>Teo Price-Broncucia presented on July 1, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Teo Price-Broncucia&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; July 1, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2712"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Parallel Performance Evaluation Using the TAU Performance System</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2713</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2713" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Sameer Shende</name>
+    </author>
+    <summary>Sameer Shende presented on June 15, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Sameer Shende&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; June 15, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2713"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Evolving Classical PDE Solvers: A Grammar-based Approach Using Evolutionary Algorithms</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2714</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2714" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Dinesh Parthasarathy</name>
+    </author>
+    <summary>Dinesh Parthasarathy presented on June 10, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Dinesh Parthasarathy&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; June 10, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2714"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Enzyme: High-Performance, Cross-Language, and Parallel Automatic Differentiation</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2715</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2715" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>William Moses</name>
+    </author>
+    <summary>William Moses presented on May 27, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; William Moses&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; May 27, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2715"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Building Scientific Software in Rust: A Case Study in Multiscale Geometry and Transport</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2716</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2716" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Josh Lewis</name>
+    </author>
+    <summary>Josh Lewis presented on April 15, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Josh Lewis&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; April 15, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2716"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>An evaluation of risks associated with abandoning Fortran</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2717</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2717" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Damian Rouson</name>
+    </author>
+    <summary>Damian Rouson presented on March 4, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Damian Rouson&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; March 4, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2717"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Kessel: Continuous Integration and Developer Workflows</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2718</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2718" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Richard Berger</name>
+    </author>
+    <summary>Richard Berger presented on February 18, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Richard Berger&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; February 18, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2718"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Safe and Resource Efficient Neural Networks through architectural collapse</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2719</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2719" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Jamil Gafur</name>
+    </author>
+    <summary>Jamil Gafur presented on February 4, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Jamil Gafur&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; February 4, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2719"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>LFortran - Modern interactive LLVM-based Fortran compiler</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2720</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2720" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>OndÅ™ej ÄŒertÃ­k</name>
+    </author>
+    <summary>OndÅ™ej ÄŒertÃ­k presented on January 14, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; OndÅ™ej ÄŒertÃ­k&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; January 14, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2720"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>From Kernels to Standards: How Kokkos and Modern C++ Future-Proof Critical Simulation Codes</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2721</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2721" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Damien Lebrun-GrandiÃ©</name>
+    </author>
+    <summary>Damien Lebrun-GrandiÃ© presented on January 7, 2026.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Damien Lebrun-GrandiÃ©&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; January 7, 2026&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2721"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Randomized Methods for Corrupted Tensor Systems</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2722</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2722" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Alejandra Castillo</name>
+    </author>
+    <summary>Alejandra Castillo presented on December 3, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Alejandra Castillo&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; December 3, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2722"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>From Anaconda to Pixi: Modernizing Python Package Management for Neutron Science at ORNL</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2723</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2723" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Chen Zhang</name>
+    </author>
+    <summary>Chen Zhang presented on November 12, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Chen Zhang&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; November 12, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2723"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>PPT-GPU 2.0: An Accurate, Scalable, Hybrid Performance Model for Modern GPGPUs</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2724</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2724" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Abdel-Hameed (Hameed) A. Badawy</name>
+    </author>
+    <summary>Abdel-Hameed (Hameed) A. Badawy presented on October 29, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Abdel-Hameed (Hameed) A. Badawy&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; October 29, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2724"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>What We Need to Model Planetary Interiors: The Role of Research Software in Computational Geodynamics</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2725</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2725" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Rene Gassmoeller</name>
+    </author>
+    <summary>Rene Gassmoeller presented on October 15, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Rene Gassmoeller&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; October 15, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2725"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>To Interoperability And Beyond: Interoperable Types Through the Promises of C and C++ and ABI Abuse</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy2726</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy2726" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>CJ Solomon</name>
+    </author>
+    <summary>CJ Solomon presented on October 2, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; CJ Solomon&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; October 2, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy2726"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>First digital biophysical model of the entire human cardiovascular system</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy267</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy267" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Maxwell Cole</name>
+    </author>
+    <summary>Maxwell Cole presented on August 27, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Maxwell Cole&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; August 27, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy267"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Computational cosmology meets AI: the birth of a surrogate model for subscale physics</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy268</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy268" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Michael L Norman</name>
+    </author>
+    <summary>Michael L Norman presented on August 13, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Michael L Norman&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; August 13, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy268"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Introducing Enzo-E, an extreme scale AMR radiation hydrodynamic cosmology code built on Charm++</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy266</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy266" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Michael L Norman</name>
+    </author>
+    <summary>Michael L Norman presented on July 23, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Michael L Norman&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; July 23, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy266"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>AI for code development at LANL</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy265</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy265" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Tim Burke</name>
+    </author>
+    <summary>Tim Burke presented on July 9, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Tim Burke&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; July 9, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy265"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Shedding Light on Interaction Binaries: Radiation Hydrodynamics with Octo-Tiger</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy262</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy262" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Dominic Marcello</name>
+    </author>
+    <summary>Dominic Marcello presented on June 25, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Dominic Marcello&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; June 25, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy262"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Chapel's Batteries-Included Approach for Portable Parallel Programming</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy264</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy264" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Engin Kayraklioglu</name>
+    </author>
+    <summary>Engin Kayraklioglu presented on June 18, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Engin Kayraklioglu&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; June 18, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy264"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>LCI: a Lightweight Communication Interface for Asynchronous Multithreaded Communication</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy258</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy258" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Jiakun Yan</name>
+    </author>
+    <summary>Jiakun Yan presented on May 27, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Jiakun Yan&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; May 27, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy258"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Accelerated Quantum Supercomputing with CUDA-Q</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy263</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy263" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Monica Van Dieren</name>
+    </author>
+    <summary>Monica Van Dieren presented on May 21, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Monica Van Dieren&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; May 21, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy263"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Scaling AI for Scientific Discovery: Faster Kernels, Efficient Models, Better Physics</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy261</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy261" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Aparna Chandramowlishwaran</name>
+    </author>
+    <summary>Aparna Chandramowlishwaran presented on April 15, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Aparna Chandramowlishwaran&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; April 15, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy261"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Driving Continuous Integration and Developer Workflows with Spack</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy260</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy260" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Richard Berger</name>
+    </author>
+    <summary>Richard Berger presented on April 8, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Richard Berger&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; April 8, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy260"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Introducing the Lamellar Runtime: A Modern Approach to High-Performance Computing</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy259</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy259" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Ryan Friese</name>
+    </author>
+    <summary>Ryan Friese presented on April 2, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Ryan Friese&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; April 2, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy259"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Deploying and Supporting Julia at NERSC</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy257</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy257" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Johannes Blaschke</name>
+    </author>
+    <summary>Johannes Blaschke presented on March 12, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Johannes Blaschke&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; March 12, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy257"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>The value proposition of the Julia language for DOEâ€™s mission</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy256</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy256" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>William Godoy</name>
+    </author>
+    <summary>William Godoy presented on March 12, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; William Godoy&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; March 12, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy256"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Transparent Resource Adaptivity for Task-Based Applications on Supercomputers</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy255</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy255" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Jonas Posner</name>
+    </author>
+    <summary>Jonas Posner presented on February 24, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Jonas Posner&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; February 24, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy255"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Rust and type safety for MPI and scientific computing</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy254</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy254" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Jed Brown</name>
+    </author>
+    <summary>Jed Brown presented on February 12, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Jed Brown&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; February 12, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy254"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Thermonuclear electron-capture supernovae - Motivating a long-overdue update to the supernova modeling pipeline for the exascale computing age</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy253</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy253" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Alexander Holas</name>
+    </author>
+    <summary>Alexander Holas presented on January 9, 2025.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Alexander Holas&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; January 9, 2025&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy253"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Asynchronous-Many-Task Systems: Challenges and Opportunities - Scaling an AMR Astrophysics Code on Exascale machines using Kokkos and HPX</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy252</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy252" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Gregor Daiß</name>
+    </author>
+    <summary>Gregor Daiß presented on December 11, 2024.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Gregor Daiß&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; December 11, 2024&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy252"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>RISC-V HPC Terrain Familiarization</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy251</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy251" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Chris Taylor</name>
+    </author>
+    <summary>Chris Taylor presented on December 4, 2024.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Chris Taylor&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; December 4, 2024&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy251"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Journal of Open Source Software: bot-assisted open peer review and publication</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy242</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy242" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Kyle Niemeyer</name>
+    </author>
+    <summary>Kyle Niemeyer presented on September 19, 2024.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Kyle Niemeyer&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; September 19, 2024&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy242"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Improving MPI Interoperability for Modern Languages and Systems</title>
+    <id>https://appliedcomputerscienceseries.lanl.gov/#fy241</id>
+    <link href="https://appliedcomputerscienceseries.lanl.gov/#fy241" />
+    <updated>2026-08-13T16:25:09Z</updated>
+    <author>
+      <name>Joseph Schuchart</name>
+    </author>
+    <summary>Joseph Schuchart presented on August 21, 2024.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Speaker:&lt;/strong&gt; Joseph Schuchart&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; August 21, 2024&lt;/p&gt;&lt;p&gt;&lt;a href="https://appliedcomputerscienceseries.lanl.gov/#fy241"&gt;View talk details&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+</feed>
