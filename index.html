@@ -291,6 +291,18 @@
         </thead>
         <tbody>
           <tr>
+            <td data-label="Speaker">Lucas Timotheo Sanches</td>
+            <td data-label="Title">
+              <a href="#50">
+                Multi-step Rung-Kutta methods and what they can do for you</a
+              >
+            </td>
+            <td data-label="Date">
+              <time datetime="2027-01-13">10/02/2027</time>
+            </td>
+          </tr>
+          <tr></tr>
+          <tr>
             <td data-label="Speaker">Jan Ciesko</td>
             <td data-label="Title">
               <a href="#49"
@@ -869,6 +881,33 @@
       </table>
 
       <h2 id="talks">Talks</h2>
+
+      <h3 id="50" tabindex="-1">
+        Multi-step Rung-Kutta methods and what they can do for you
+      </h3>
+      Speaker: Lucas Timotheo Sanches<br />
+      University of Illinois Urbana Champaign<br /><br />
+
+      <h4>Abstract</h4>
+      <p>
+        Time integrators are a fundamental piece of many scientific simulation
+        codes. Leading among these methods are the standard RK4 and SSPRK3
+        methods. To advance a problem in time, these methods evaluate PDE right
+        hand sides (RHS), which is usually where most time is spent in a code, 4
+        and 3 times respectively. Multistep RK (MSRK) methods can reduce the
+        number of evaluations required by storing and reusing past time level
+        information. In this talk I will first introduce the mathematical
+        underpinnings of these methods. Then I will show how we constructed MSRK
+        methods tuned for real world HPC numerical relativity applications and
+        how they enable the solution of problems that would not be possible
+        otherwise. Finally, I will talk about our ongoing work on developing a
+        variable time-step strong stability preserving third order scheme that
+        is well suitable for conservative schemes and will present preliminary
+        results using the Octotiger code.
+      </p>
+
+      <h4>Bio</h4>
+      <p></p>
 
       <h3 id="49" tabindex="-1">
         Toward an Affordable Composition Model for HPC: Kokkos Parallel Patterns
